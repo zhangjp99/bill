@@ -1,0 +1,61 @@
+<%layout("/eova/layout/base.html",{'title' : '扩展应用'}){%>
+<style>
+a {
+	color: blue;
+	font-weight: bold;
+}
+</style>
+<div style="padding: 10px; ">
+
+	<%for(x in mods){%> ${x.name}：[${x.group_code}-${x.code}-${x.version}] 开发者: ${x.author}
+		<br> ${x.info} ${x.type == 0 ? '[系统应用]' : ''}
+		<br>
+		<%if(!isTrue(x.installed!)){%>
+			<button class="layui-btn layui-btn-normal layui-btn-xs" onclick="install('/eova/store/install/${x.id}', $(this));">
+				<i class="layui-icon eova-icon-add-1"></i> 安装
+			</button>
+		<%}else{%>
+			<button class="layui-btn layui-btn-disabled layui-btn-xs">已安装</button>
+		<%}%>
+		<hr>
+	<%}%>
+	
+	<a href="http://www.eova.cn/store" target="_blank">获取更多扩展应用</a>
+	
+</div>
+
+<script>
+
+function install(url, $btn){
+	layer.confirm('确定安装该应用？', {
+		title : '确定安装',
+		icon : 3,
+		btn : [ '确定', '取消' ]
+	}, function(index) {
+		
+		layer.msg("正在安装", {icon: 16 ,shade: 0.01, time: 20*1000});
+		
+		$.eovaPost(url, function(ret){
+			
+			layer.closeAll('loading');
+			
+			if (ret.state == 'ok') {
+				$.msg('安装成功, 待重启服务后生效');
+				$btn.html('已安装');
+				$btn.removeClass('layui-btn-normal');
+				$btn.addClass('layui-btn-disabled');
+			} else {
+				$.error(ret.msg);
+			}
+		});
+		layer.close(index);
+	});
+}
+
+$(function(){
+	
+	
+});
+</script>
+
+<%}%>

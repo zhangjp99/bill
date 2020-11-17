@@ -1,0 +1,41 @@
+#set(ver="1.0.0")
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>#(o.name)列表</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="format-detection" content="telephone=yes" />
+<link rel="stylesheet" href="/mobile/weui/weui.css?v=#(ver)" />
+<link rel="stylesheet" href="/mobile/weuix/weuix.css?v=#(ver)" />
+</head>
+<body>
+	<div>
+		<#query id="queryForm" objectCode="#(o.code)" />
+	</div>
+	<div class="weui-btn_primary weui-header">
+		<div class="weui-header-left">
+			<a class="icon icon-109 f-white" href="/h5"></a>
+		</div>
+		<h1 class="weui-header-title">#(o.name)列表</h1>
+		<div class="weui-header-right">
+			<a class="icon icon-36 f-white" href="/h5/add/#(o.code)"></a>
+		</div>
+	</div>
+
+	<div class="weui-cells">
+		#for(x : list)
+	           <a class="weui-cell  weui-cell_access" href="/h5/detail/#(o.code)-#(x.id)">
+	               <div class="weui-cell__bd">
+	                   <p>#(x.nickname??x.name)</p>
+	               </div>
+	               <div class="weui-cell__ft">如此如此</div>
+	           </a>
+	       </div>
+		#else
+		<div class="weui-panel__hd">暂无数据</div>
+		#end
+	</div>
+
+</body>
+</html>

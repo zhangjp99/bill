@@ -1,0 +1,66 @@
+<%layout("/eova/layout/base.html",{'title' : 'EOVA应用商店'}){%>
+
+<style>
+.menu {
+	width: 240px;
+	background-color: #F5F5F5;
+}
+
+.menu a{
+	display: block;
+	line-height: 40px;	
+	padding-left: 20px;
+}
+.menu a:HOVER, .menu .active {
+	background-color: #1A73E8;
+	color: white;
+}
+.menu span {
+	margin-left: 10px;
+}
+
+.footer {
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 10px;
+	color:rgb(195, 195, 195);
+}
+</style>
+
+<div class="eova-layout" style="width: calc(100% - 0px); height: calc(100% - 0px);">
+	<div class="zone" style="width: 100%; height: 100%;">
+		<div class="box" style="width: 240px;">
+			<div class="menu" style="">
+				<a href="#已安装应用" onclick="refresh('/eova/store/my')" class="active" ><i class="eova-icon eova-icon-template-1"></i><span>已安装应用</span></a>
+				<a href="#扩展应用" onclick="refresh('/eova/store/mod')" ><i class="eova-icon eova-icon-app"></i><span>扩展应用</span></a>
+				<a href="#扩展控件" onclick="$.msg('只要你知道的控件, 这里都会有!')"><i class="eova-icon eova-icon-util"></i><span>扩展控件</span></a>
+				<a href="#主题风格" onclick="$.msg('只要开了美颜, 人人都是乔碧萝!')"><i class="eova-icon eova-icon-theme"></i><span>主题风格</span></a>
+				<a href="#业务模版" onclick="$.msg('单表, 树表 , 神马表, 你的业务你来定!')"><i class="eova-icon eova-icon-layouts"></i><span>业务模版</span></a>
+				<a href="#平台升级" onclick="refresh('/eova/store/platformUpgrade')"><i class="eova-icon eova-icon-release"></i><span>平台升级</span></a>
+			</div>
+			<div class="footer">
+				Eova App Store Version 1.0.4<br>
+			</div>
+		</div>
+		<div class="box" style="width: calc(100% - 10px - 240px); left: calc(10px + 240px);">
+			<iframe id="IFM" src="/eova/store/my" allowtransparency="true" style="border: 0; width: 100%; height: 100%;" frameborder="0"></iframe>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+function refresh(url) {
+	document.getElementById("IFM").src = url;
+}
+
+$(function(){
+	// 切换会话
+	$('.menu a').on("click", function (e) {
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+	});
+});
+</script>
+
+<%}%>

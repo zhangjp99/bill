@@ -1,0 +1,118 @@
+/* 微信绿 */
+
+/* 
+自定义皮肤方法: 
+1.替换下列颜色代码为自己喜欢的颜色
+2.本文件另存为/ui/skin/myskin.css,
+3.eova.config ui.skin=myskin
+*/
+
+/* 主框架配色 */
+.layui-side-menu, .layadmin-pagetabs .layui-tab-title li:after, .layadmin-pagetabs .layui-tab-title li.layui-this:after, .layui-layer-admin .layui-layer-title,
+	.layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+	background-color: #344058 !important;
+}
+
+.layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a {
+	background-color: #2BA245 !important;
+}
+
+.layui-layout-admin .layui-logo {
+	background-color: #2BA245 !important;
+}
+
+.layui-layout-admin .layui-header {
+	background-color: #2BA245;
+}
+
+.layui-layout-admin .layui-header a, .layui-layout-admin .layui-header a cite {
+	color: #f8f8f8;
+}
+
+.layui-layout-admin .layui-header a:hover {
+	color: #fff;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-nav-more {
+	border-top-color: #fbfbfb;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-nav-mored {
+	border-color: transparent;
+	border-bottom-color: #fbfbfb;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-this:after, .layui-layout-admin .layui-header .layui-nav-bar {
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, .5);
+}
+
+.layadmin-pagetabs .layui-tab-title li:after {
+	display: none;
+}
+
+.layui-nav-tree .layui-nav-bar{
+	background-color: #2BA245;
+}
+
+/* 按钮 */
+.layui-btn,
+.layui-btn-primary:hover
+{
+	background-color: #2BA245;
+}
+.layui-btn-primary {
+	background-color: #fff;
+}
+.layui-btn-normal {
+	background-color: #2BA245;
+}
+.layui-btn-warm {
+	background-color: #FFB800;
+}
+.layui-btn-danger {
+	background-color: #FF5722;
+}
+.layui-btn-disabled {
+	background-color: #FBFBFB;
+}
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #2BA245!important;
+    background-color: #2BA245!important;
+    color: #2BA245;
+}
+
+
+/* 弹窗标题栏 */
+.layui-layer-title {
+	background-color: #2BA245!important;
+	color: white!important;
+}
+
+/* 下拉选项 */
+.eova-combo-selected,
+.eova-combo-selected:hover {
+	background-color: #2BA245!important;
+}
+/* 布尔框 */
+.eova-bool.select, .eova-bool.select em {
+    border-color: #2BA245;
+    background-color: #2BA245;
+}
+/* 复选框 */
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #2BA245!important;
+    background-color: #2BA245!important;
+    color: #fff;
+}
+/* 文本框 */
+div[class^="eova"]>input[type="text"]:hover, 
+div[class^="eova"]>input[type="text"]:focus,
+textarea:hover {
+    border-color: #2BA245 !important;
+}
+
+/* 分页 */
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #2BA245!important;
+}

@@ -1,0 +1,133 @@
+<%var body = {%>
+<form method="post" class="eova-form" onsubmit="return false;" enctype="multipart/form-data" style="width: 850px">
+	<div class="eova-form-field">
+		<label class="eova-form-label red">应用名称</label>
+		<#text id="name" name="name" value="${mod.name}" placeholder="简短中文描述" width="555" isReadonly="true" />
+	</div>
+	<div class="eova-form-field">
+		<label class="eova-form-label red">旧版本</label>
+		<#text id="version" name="version" value="${mod.group_code}-${mod.code}-${mod.version}.jar" placeholder="版本号" width="555" isReadonly="true" />
+	</div>
+	<div class="eova-form-field">
+		<label class="eova-form-label red">新版本</label>
+		<div class="eova-file">
+			<input type="text" id="jar" value="" placeholder="请选择新版本jar" style="width: 513px;" readonly="readonly"><i class="eova-icon" title="点击选择Jar">&#xe681;</i>
+			<input type="file" id="jar_file" name="jar_file" style="display: none;">
+		</div>
+	</div>
+	<div style="margin-left: 115px">
+		<a class="layui-btn layui-btn-normal" onclick="btnSaveCallback()">
+			<i class="layui-icon"></i> 开始升级
+		</a>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	var $JAR;
+    $(function () {
+		var $input = $('#jar');
+		var $btn = $input.siblings('i');
+		var $file = $input.siblings('input');
+		
+		$input.click(function(){
+			$file.click();
+		})
+
+		
+		var upload = function(){
+			$JAR = $('#jar_file');
+			
+			var reader = new FileReader();
+			var files = $JAR.prop('files');
+			var file = files[0];
+			$input.val(file.name);
+			if (!limit($input.val())) {
+		        $('.layui-btn').addClass('layui-btn-disabled');
+				return;
+			}
+			$('.layui-btn').removeClass('layui-btn-disabled');
+		};
+		
+		$(document).on("change","#jar_file", upload);
+		
+		var extArray = new Array(".jar");
+
+		function limit(file){
+			var version = $('#version').eovatext().getValue();
+			if(version == file){
+				$.msg('命名重复, 版本号不能重复!');
+				return false;
+			}
+			
+		    var allowSubmit = false;
+		    if (!file){
+		    	$.msg('请选择一个Jar文件!');
+		        return false;
+		    }
+		    while (file.indexOf("\\") != -1){
+		        file = file.slice(file.indexOf("\\") + 1);
+		    }
+		    var ext = file.slice(file.lastIndexOf(".")).toLowerCase();
+		    for (var i = 0; i < extArray.length; i++) {
+		        if (extArray[i] == ext){
+		            allowSubmit = true;
+		            break;
+		        }
+		    }
+		    if (!allowSubmit){
+		    	$.msg("只能上传.jar的文件, 请重新选择");
+		    	return false;
+		    }
+		    return true;
+		}
+		
+    });
+</script>
+
+<script type="text/javascript">
+// ------------------------- 动态参数配置
+var $form = $('.eova-form');
+// ------------------------- 动态参数配置
+
+// 确认按钮回调
+var btnSaveCallback = function() {
+	$form.isValid(function(isValied) {
+		if (isValied) {
+			// $form.submit();
+			if(!$JAR){
+				$.alert('请选择应用Jar');
+				return;
+			}
+			var files = $JAR.prop('files');
+			
+			var data = new FormData();
+			data.append("jar_file", files[0]);
+			
+			$.ajax({
+			    url: '/eova/store/doUpdate/${mod.id}',
+			    type: 'POST',
+			    cache: false,
+			    data: data,
+			    processData: false,
+			    contentType: false,
+			}).done(function(o){
+            	if (o.state == 'ok') {
+        			layer.confirm('更新成功, 待重启服务后生效', {
+        				title : '更新成功',
+        				icon : 3,
+        				btn : [ '确定', '取消' ]
+        			}, function(index) {
+        				location.reload();
+        				layer.close(index);
+        			});
+        		} else {
+        			$.alert(o.msg);
+        		}
+            });
+		}
+	});
+};
+</script>
+
+<%};include("/eova/layout/form.html",{'title' : '更新我的扩展应用', 'layoutContent' : body, 'isEditor' : false}){}%>

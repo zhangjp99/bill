@@ -1,0 +1,71 @@
+<%var body = {%>
+<div class="eova-layout" style="width: calc(100% - 10px); height: calc(100% - 10px); margin: 5px;">
+	<div class="zone" style="width: 100%; height: 100%;">
+		<div class="box" style="height: 200px;">
+			<#form id="queryFindForm" objectCode="hotel" />
+		</div>
+		<div class="box" style="height: calc(100% - 5px - 200px); top: calc(5px + 200px)">
+			<div class="layui-btn-container" id="toolbar" style="display: none;">
+				<button class="layui-btn layui-btn-sm" onclick="addRow()">
+					<i class="layui-icon layui-icon-add-1"></i> 新增行
+				</button>
+				<button class="layui-btn layui-btn-danger layui-btn-sm"  onclick="delRow()">
+					<i class="layui-icon layui-icon-delete"></i> 删除行
+				</button>
+			</div>
+			<#table id="hotelStockTable" toolbar="toolbar" objectCode="hotel_stock" data="[]" isPaging="false" />
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/ui/js/diy/area.js"></script>
+<script type="text/javascript">
+	// ------------------------- 动态参数配置
+	var $form = $('.eova-form');
+	var action = '/hotel/doAdd';
+	var msg = '新增酒店和库存';
+	var TID = 'hotelStockTable';
+	// ------------------------- 动态参数配置
+	
+	// 新增行
+	function addRow(){
+		$.table.addRow(TID);
+	}
+	
+	// 删除行
+	function delRow(){
+		$.table.delRow(TID);
+	}
+
+	// 确认按钮回调
+	var btnSaveCallback = function($dialog, ID, $$) {
+		
+		layui.use(['table', 'element'], function() {
+			var $ = layui.$,
+			table = layui.table;
+			
+			var data = $.table.getData(TID);
+			// console.log($.json.toStr(data));
+			
+			var flag = true;
+			
+			// 自定义前端逻辑处理(抛砖引玉)
+			$.each(data, function(i, o){
+				if(o.num == '' || o.num == '0'){
+					$.alert("数量不能少于1");
+					flag = false;
+				}
+			});
+			
+			if(flag){
+				submitForm($$, ID, $form, action, msg, data);
+			}
+		});
+		
+	};
+	
+	
+	// 当前操作模式,标识, 一般用于DIY_JS中 判断操作类型来进行个性化前端逻辑
+	var EOVA_FORM = "add";
+</script>
+
+<%};include("/eova/layout/form.html",{'title' : 'Eova From Grid Demo', 'layoutContent' : body, 'isEditor' : false}){}%>

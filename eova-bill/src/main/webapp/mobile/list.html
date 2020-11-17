@@ -1,0 +1,139 @@
+<%var ver="1.0.0";%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>${o.name}列表</title>
+    <%include("/eova/meta.html"){}%>
+    <%include("/eova/include.html"){}%>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=yes"/>
+
+<!--    <link rel="stylesheet" href="/mobile/weui/weui.css?v=${ver}"/>-->
+    <link rel="stylesheet" href="/mobile/weuix/weuix.css?v=${ver}"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+</head>
+<body>
+<!--	<div>-->
+<!--		<#query id="queryForm" objectCode="${o.code}" />-->
+<!--	</div>-->
+<div id="app">
+    <div class="weui-btn_primary weui-header">
+        <div class="weui-header-left">
+            <a class="icon icon-109 f-white" href="/h5"></a>
+        </div>
+        <h1 class="weui-header-title">${o.name}列表</h1>
+        <div class="weui-header-right">
+            <a class="icon icon-4 f-white" onclick="popup()"></a>
+            <a class="icon icon-36 f-white" href="/h5/add/${o.code}"></a>
+        </div>
+    </div>
+
+    <div class="weui-cells">
+        <a class="weui-cell  weui-cell_access" v-for="x in list" :href="'/h5/detail/${o.code}-'+x.id">
+            <div class="weui-cell__bd">
+                <p><%for(f in list_left){print('{{x.'+f+'}}&nbsp;');}%></p>
+            </div>
+            <div class="weui-cell__ft"><%for(f in list_right){print('{{x.'+f+'}}&nbsp;');}%></div>
+        </a>
+        <div class="weui-loadmore" v-if="load">
+            <i class="weui-loading"></i>
+            <span class="weui-loadmore__tips">正在加载</span>
+        </div>
+        <div class="weui-loadmore weui-loadmore_line weui-loadmore_dot" v-if="!load">
+            <span class="weui-loadmore__tips"></span>
+        </div>
+    </div>
+    <div class="weui-loadmore weui-loadmore_line" v-if="list.length==0">
+        <span class="weui-loadmore__tips">暂无数据</span>
+    </div>
+
+</div>
+<div id="query" class="weui-popup__container  popup-bottom">
+    <div class="weui-popup__overlay"></div>
+    <div class="weui-popup__modal">
+        <#query id="queryForm" objectCode="${o.code}" />
+        <div style="width: 100%;background-color: white;text-align: center;">
+            <div class="weui-btn weui-btn_mini weui-btn_primary " style="color: white" onclick="search()">搜索</div>
+            <div class="weui-btn weui-btn_mini weui-btn_warn" style="color: white" onclick="window.location.reload()">重置</div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+
+    let getData = function () {
+        $.get('/grid/query/${o.code}?page=' + (page++) + "&limit=" + pageSize, function (res) {
+            res.data.forEach(item => {
+                app.list.push(item)
+            })
+            if (Number(res.count > app.list.length)) {
+                loading = false
+                app.load = true
+            } else {
+                app.load = false
+            }
+        })
+    }
+
+
+
+
+    var page = 1;
+    var pageSize = 15;
+    let app = new Vue({
+        el: '#app',
+        data: {
+            list: [],
+            load: true,
+            key:''
+        },
+        mounted() {
+            getData()
+        }
+    })
+
+
+    var loading = false;  //状态标记
+    $(document.body).infinite().on("infinite", function () {
+        if (loading) return;
+        loading = true;
+        getData()
+
+    });
+
+    var popup = function () {
+        $("#query").popup();
+    }
+
+    var search = function(){
+        var data = $.getFormParasObj($('#queryForm'));
+        $.post('/grid/query/${o.code}?page=1&limit=15',data, function (res) {
+            app.list = []
+            res.data.forEach(item => {
+                app.list.push(item)
+            })
+            page = 2
+            if (Number(res.count > app.list.length)) {
+                loading = false
+                app.load = true
+            } else {
+                app.load = false
+            }
+            $.closePopup()
+        })
+    }
+
+
+    $(function () {
+        // 控件初始化
+        $.initEovaUI()
+
+    });
+</script>
+</body>
+</html>

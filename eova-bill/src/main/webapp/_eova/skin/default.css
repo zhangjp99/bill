@@ -1,0 +1,11 @@
+/** 经典黑白墨绿 */
+
+/* 优化菜单子目录背景色, 利于区分不同层级  */
+.layui-nav-itemed>.layui-nav-child {
+	background-color: rgb(0, 0, 0)!important;
+}
+
+/* 菜单标题文字不缩略  */
+.layui-nav-tree .layui-nav-item a {
+/*     text-overflow: unset!important; */
+}

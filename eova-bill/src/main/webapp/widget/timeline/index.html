@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/eova/plugins/layui/css/layui.css" media="all">
+<input type="hidden" name="${name}" id ="${item.en}" value="${value!}" >
+<div id="${name!}_view" style="display: inline-block;width: 780px;margin-left: 88px;margin-top: -22px;"></div>
+<script id="template" type="text/html">
+<ul class="layui-timeline">
+	{{#  layui.each(d, function(i, o){ }}
+	{{#  if(o.trim() != ""){   }}
+	<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
+		<div class="layui-timeline-content layui-text">
+			<div class="layui-timeline-title">{{o}}</div>
+		</div>
+	</li>
+	{{#  }  }}
+	{{#  }); }}
+</ul>
+</script>
+<script src="/eova/plugins/layui/layui.all.js"></script>
+<script>
+var laytpl = layui.laytpl;
+var value = $('#${item.en}').val();
+if(value){
+	var data = value.split("<br>");
+	var t = template.innerHTML,v = document.getElementById('${name!}_view');
+	laytpl(t).render(data, function(html){
+	  v.innerHTML = html;
+	});
+}
+</script>

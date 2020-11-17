@@ -1,0 +1,33 @@
+<%var body = { %>
+<link rel="stylesheet" href="/mobile/weui/weui.css?v=#(ver)" />
+<link rel="stylesheet" href="/mobile/weuix/weuix.css?v=#(ver)" />
+
+	<div class="weui-btn_primary weui-header">
+		<div class="weui-header-left">
+			<a class="icon icon-109 f-white" href=/h5/list/${o.code}></a>
+		</div>
+		<h1 class="weui-header-title">修改</h1>
+	</div>
+
+	<div class="eova-layout" style="width: 100%; height: calc(100% - 45px);">
+		<div class="zone" style="width: 100%; height: calc(100% - 45px);">
+			<iframe id="formFrame" src="/form/update/${objectCode}-${id}" allowtransparency="true" style="border: 0; width: 100%; height: calc(100% - 10px);" frameborder="0"></iframe>
+			<div style="text-align: center;">
+				<button class="layui-btn layui-btn-lg layui-btn-fluid" onclick="singleUpdate()">
+					<i class="layui-icon layui-icon-ok"></i> 修改
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var singleUpdate = function() {
+			// 调用IFrame内的保存函数
+			$('#formFrame')[0].contentWindow.btnSaveCallback(null, function() {
+				location.href = "/h5/list/${objectCode}";
+			}, parent.$);
+		}
+	</script>
+
+
+<%};include("/eova/layout/form.html",{'title' : '数据修改', 'layoutContent' : body, 'isEditor' : true}){}%>

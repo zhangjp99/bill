@@ -1,0 +1,212 @@
+{
+  "id": "2050913",
+  "name": "eova-pro-base",
+  "font_family": "iconfont",
+  "css_prefix_text": "eova_",
+  "description": "eova-pro 最少依赖图标库",
+  "glyphs": [
+    {
+      "icon_id": "15521781",
+      "name": "Apps",
+      "font_class": "Apps",
+      "unicode": "eb57",
+      "unicode_decimal": 60247
+    },
+    {
+      "icon_id": "15521785",
+      "name": "Add_to_cart_2",
+      "font_class": "Add_to_cart_2",
+      "unicode": "eb58",
+      "unicode_decimal": 60248
+    },
+    {
+      "icon_id": "15521786",
+      "name": "Ballance",
+      "font_class": "Ballance",
+      "unicode": "eb59",
+      "unicode_decimal": 60249
+    },
+    {
+      "icon_id": "15521811",
+      "name": "Book",
+      "font_class": "Book",
+      "unicode": "eb5a",
+      "unicode_decimal": 60250
+    },
+    {
+      "icon_id": "15521821",
+      "name": "Charts",
+      "font_class": "Charts",
+      "unicode": "eb61",
+      "unicode_decimal": 60257
+    },
+    {
+      "icon_id": "15521829",
+      "name": "Code_2",
+      "font_class": "Code_2",
+      "unicode": "eb62",
+      "unicode_decimal": 60258
+    },
+    {
+      "icon_id": "15521834",
+      "name": "Cog_Wheel",
+      "font_class": "Cog_Wheel",
+      "unicode": "eb63",
+      "unicode_decimal": 60259
+    },
+    {
+      "icon_id": "15521852",
+      "name": "Database",
+      "font_class": "Database",
+      "unicode": "eb68",
+      "unicode_decimal": 60264
+    },
+    {
+      "icon_id": "15521856",
+      "name": "Desktop_2",
+      "font_class": "Desktop_2",
+      "unicode": "eb69",
+      "unicode_decimal": 60265
+    },
+    {
+      "icon_id": "15521859",
+      "name": "Delivery_4",
+      "font_class": "Delivery_4",
+      "unicode": "eb6a",
+      "unicode_decimal": 60266
+    },
+    {
+      "icon_id": "15521869",
+      "name": "ID_2",
+      "font_class": "ID_2",
+      "unicode": "eb70",
+      "unicode_decimal": 60272
+    },
+    {
+      "icon_id": "15521870",
+      "name": "Heart",
+      "font_class": "Heart",
+      "unicode": "eb71",
+      "unicode_decimal": 60273
+    },
+    {
+      "icon_id": "15521876",
+      "name": "Drawer",
+      "font_class": "Drawer",
+      "unicode": "eb72",
+      "unicode_decimal": 60274
+    },
+    {
+      "icon_id": "15521879",
+      "name": "Inbox",
+      "font_class": "Inbox",
+      "unicode": "eb73",
+      "unicode_decimal": 60275
+    },
+    {
+      "icon_id": "15521898",
+      "name": "File_2",
+      "font_class": "File_2",
+      "unicode": "eb76",
+      "unicode_decimal": 60278
+    },
+    {
+      "icon_id": "15521909",
+      "name": "Group_2",
+      "font_class": "Group_2",
+      "unicode": "eb78",
+      "unicode_decimal": 60280
+    },
+    {
+      "icon_id": "15521925",
+      "name": "Keys",
+      "font_class": "Keys",
+      "unicode": "eb7b",
+      "unicode_decimal": 60283
+    },
+    {
+      "icon_id": "15521943",
+      "name": "Package_Opened",
+      "font_class": "Package_Opened",
+      "unicode": "eb80",
+      "unicode_decimal": 60288
+    },
+    {
+      "icon_id": "15521959",
+      "name": "News",
+      "font_class": "News",
+      "unicode": "eb85",
+      "unicode_decimal": 60293
+    },
+    {
+      "icon_id": "15521960",
+      "name": "Like_UI",
+      "font_class": "Like_UI",
+      "unicode": "eb86",
+      "unicode_decimal": 60294
+    },
+    {
+      "icon_id": "15521963",
+      "name": "Online_Store_2",
+      "font_class": "Online_Store_2",
+      "unicode": "eb87",
+      "unicode_decimal": 60295
+    },
+    {
+      "icon_id": "15521990",
+      "name": "Online_Store",
+      "font_class": "Online_Store",
+      "unicode": "eb8b",
+      "unicode_decimal": 60299
+    },
+    {
+      "icon_id": "15521994",
+      "name": "Shield_2",
+      "font_class": "Shield_2",
+      "unicode": "eb8d",
+      "unicode_decimal": 60301
+    },
+    {
+      "icon_id": "15522005",
+      "name": "Safe_2",
+      "font_class": "Safe_2",
+      "unicode": "eb91",
+      "unicode_decimal": 60305
+    },
+    {
+      "icon_id": "15522018",
+      "name": "Settings_File",
+      "font_class": "Settings_File",
+      "unicode": "eb94",
+      "unicode_decimal": 60308
+    },
+    {
+      "icon_id": "15522021",
+      "name": "Type_pin",
+      "font_class": "Type_pin",
+      "unicode": "eb95",
+      "unicode_decimal": 60309
+    },
+    {
+      "icon_id": "15522027",
+      "name": "Stopwatch",
+      "font_class": "Stopwatch",
+      "unicode": "eb96",
+      "unicode_decimal": 60310
+    },
+    {
+      "icon_id": "15522060",
+      "name": "To_Do",
+      "font_class": "To_Do",
+      "unicode": "eb9e",
+      "unicode_decimal": 60318
+    },
+    {
+      "icon_id": "15522066",
+      "name": "Procesor",
+      "font_class": "Procesor",
+      "unicode": "eb9f",
+      "unicode_decimal": 60319
+    }
+  ]
+}

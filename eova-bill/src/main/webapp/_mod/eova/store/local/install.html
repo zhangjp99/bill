@@ -1,0 +1,155 @@
+<%var body = {%>
+<form method="post" class="eova-form" onsubmit="return false;" enctype="multipart/form-data" style="width: 850px">
+	<br>
+	<div class="eova-form-field">
+		<label class="eova-form-label red">应用Jar</label>
+		<div class="eova-file">
+			<input type="text" id="jar" value="" placeholder="请选择打包好的应用Jar" style="width: 513px;" readonly="readonly"><i class="eova-icon" title="点击选择Jar">&#xe681;</i>
+			<input type="file" id="jar_file" name="jar_file" style="display: none;">
+		</div>
+	</div>
+	<div class="eova-form-field">
+		<label class="eova-form-label red">组织编码</label>
+		<#text id="group" name="group" value="" placeholder="请输入你的组织名(个人或企业名称字母缩写)" width="555" />
+	</div>
+	<div class="eova-form-field">
+		<label class="eova-form-label red">应用编码</label>
+		<#text id="code" name="code" value="" placeholder="请输入你的应用名称字母缩写" width="555" />
+	</div>
+	<div class="eova-form-field">
+		<label class="eova-form-label red">版本号</label>
+		<#text id="version" name="version" value="1.0.0" placeholder="版本号" width="555" />
+	</div>
+	<div class="eova-form-field">
+		<label class="eova-form-label red">应用名称</label>
+		<#text id="name" name="name" value="" placeholder="简短中文描述" width="555" />
+	</div>
+<!-- 	<div class="eova-form-field"> -->
+<!-- 		<label class="eova-form-label">开发者</label> -->
+<!-- 		<#text id="author" name="author" value="" placeholder="" width="555" /> -->
+<!-- 	</div> -->
+<!-- 	<div class="eova-form-field"> -->
+<!-- 		<label class="eova-form-label">应用描述</label> -->
+<!-- 		<#texts id="info" name="info" placeholder="" style="width:533px;height:100px;" /> -->
+<!-- 	</div> -->
+	<div style="margin-left: 115px">
+		<a class="layui-btn layui-btn-normal" onclick="btnSaveCallback()">
+			<i class="layui-icon"></i> 开始安装
+		</a>
+	</div>
+	
+</form>
+
+
+<script type="text/javascript">
+	var $JAR;
+    $(function () {
+		var $input = $('#jar');
+		var $btn = $input.siblings('i');
+		var $file = $input.siblings('input');
+		
+		$input.click(function(){
+			$file.click();
+		})
+		$btn.click(function(){
+			$file.click();
+		});
+		
+		var upload = function(){
+			$JAR = $('#jar_file');
+			
+			var reader = new FileReader();
+			var files = $JAR.prop('files');
+			var file = files[0];
+			$input.val(file.name);
+			if (!limit($input.val())) {
+				return;
+			}
+           	// 自动填充文本框
+			var arry = file.name.split('-');
+           	if(arry.length >= 3){
+	           	$('#group').eovatext().setValue(arry[0]);
+	           	$('#code').eovatext().setValue(arry[1]);
+	           	$('#version').eovatext().setValue(arry[2].replace('.jar', ''));
+	           	$('#name').eovatext().setValue(arry[0]+'-'+arry[1]);
+           	}
+		};
+		
+		$(document).on("change","#jar_file", upload);
+		
+		var extArray = new Array(".jar");
+
+		function limit(file){
+		    var allowSubmit = false;
+		    if (!file){
+		    	$.msg('请选择一个Jar文件!');
+		        return false;
+		    }
+		    while (file.indexOf("\\") != -1){
+		        file = file.slice(file.indexOf("\\") + 1);
+		    }
+		    var ext = file.slice(file.lastIndexOf(".")).toLowerCase();
+		    for (var i = 0; i < extArray.length; i++) {
+		        if (extArray[i] == ext){
+		            allowSubmit = true;
+		            break;
+		        }
+		    }
+		    if (!allowSubmit){
+		    	$.msg("只能上传.jar的文件, 请重新选择");
+		    	return false;
+		    }
+		    return true;
+		}
+		
+		
+    	$.configValidator($form, {
+    		group: {rule: '组织编码:required;,eovacode'},
+    		code: {rule: '应用编码:required;,eovacode'},
+    		name: {rule: '应用名称:required;,length[3~10]'},
+    		jar: {rule: '应用Jar:required;'},
+    	});
+    });
+</script>
+
+<script type="text/javascript">
+// ------------------------- 动态参数配置
+var $form = $('.eova-form');
+// ------------------------- 动态参数配置
+
+// 确认按钮回调
+var btnSaveCallback = function() {
+	$form.isValid(function(isValied) {
+		if (isValied) {
+			// $form.submit();
+			var files = $JAR.prop('files');
+			
+			var data = new FormData();
+			data.append("jar_file", files[0]);
+			data.append("group", $('#group').eovatext().getValue());
+			data.append("code",  $('#code').eovatext().getValue());
+			data.append("version",  $('#version').eovatext().getValue());
+			data.append("name",  $('#name').eovatext().getValue());
+// 			data.append("author",  $('#author').eovatext().getValue());
+// 			data.append("info",  $('#info').val());
+			
+			$.ajax({
+			    url: '/eova/store/doAdd',
+			    type: 'POST',
+			    cache: false,
+			    data: data,
+			    processData: false,
+			    contentType: false,
+			}).done(function(o){
+            	if (o.state == 'ok') {
+        			$.msg('安装成功, 待重启服务后生效');
+        		} else {
+        			$.msg(o.msg);
+        		}
+            });
+		}
+	});
+};
+</script>
+
+<%};include("/eova/layout/form.html",{'title' : '添加我的扩展应用', 'layoutContent' : body, 'isEditor' : false}){}%>

@@ -1,0 +1,9 @@
+<button class="layui-btn layui-btn-sm" onclick="singleAdd()">
+	<i class="layui-icon layui-icon-add-1"></i> ${button.name!'新增'}
+</button>
+<script type="text/javascript">
+    var singleAdd = function () {
+		var ID = 'master_grid';
+		dialog(ID, '${button.name}', '/hotel/add' , 720, 600);
+    }
+</script>

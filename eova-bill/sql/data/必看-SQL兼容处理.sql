@@ -1,0 +1,17 @@
+-- ------------------------------------------------------------------------
+-- -- 不同的DB SQL的要求不一样, 所以下面列举一些特殊的兼容处理, 需要大家根据情况进行语法替换
+-- --------------------------------------------------------------------------
+--
+-- --------------------------------------------------单引号的转义处理
+-- -- Mysql --> \' --> 单反斜杠转义单引号
+-- -- UPDATE eova_xxx SET a = '	select * from eova_dict where object = \'eova_field\'		';
+--
+-- -- Oracle --> '' --> 单引号转义单引号
+-- -- UPDATE eova_xxx SET a = '	select * from eova_dict where object = ''eova_field''		';
+--
+-- -- Pgsql --> '' --> 字符串前面加上E(E就是Escape)进行转义
+-- -- UPDATE eova_xxx SET a = E'	select * from eova_dict where object = 'eova_field'		';
+--
+-- --------------------------------------------------双引号的转义处理
+-- -- Mysql --> Oracle --> \" --> " 双引号转义单引号
+-- -- '{\"fields\":[\"object_code\"],\"objectCode\":

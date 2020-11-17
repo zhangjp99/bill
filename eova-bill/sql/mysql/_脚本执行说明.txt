@@ -1,0 +1,37 @@
+EOVA-PRO 运行需要2个库:
+---------------------------------
+创建			 eova 和 demo 数据库
+对应 
+jdbc.config	 eova 和 main 数据源
+---------------------------------
+
+#如果是新项目如何建库?
+---------------------------------
+创建数据库 demo
+	执行 demo.sql
+	
+创建数据库 eova
+	执行 eova-3.6.0.sql
+	
+PS:记得数据库字符集和排序规则选utf8_general_ci 
+
+
+
+#如果是旧项目如何升级?
+---------------------------------
+	按需手工在eova库执行当前版本之后的增量脚本
+	
+	例如:从3.3.0 -> 3.4.0 最新
+		执行 eova-3.x.sql 中
+			-- 3.4.0 之后的脚本
+	
+	其它版本升级同理.
+
+
+资源下载推荐:
+---------------------------------
+专业版推荐使用 Mysql5.7 绿色精简版
+https://www.jianguoyun.com/p/DY2JpScQprGLBhjBtZcD
+
+专业版推荐使用 Navicat Premium 12 绿色免费版
+https://www.jianguoyun.com/p/Deu2W1QQprGLBhiitZcD

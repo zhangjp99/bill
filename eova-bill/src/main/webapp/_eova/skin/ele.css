@@ -1,0 +1,224 @@
+/* 
+	企业私人定制皮肤
+	Element UI Skin
+	风格基于:https://element.eleme.cn/ 
+*/
+
+/* ---------------------------login */
+.eova-login-body{
+	background-color: #2d3a4b!important;
+}
+/* login title*/
+.eova-user-login-header h2{
+	font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+	font-size: 26px;
+	color: #eee!important;
+}
+/* login 文字*/
+.layui-form-checkbox span{
+    color: #fff!important;
+}
+.eova-user-login-footer p{
+	display: none;
+}
+
+/* login input*/
+.eova-login-body .layui-input{
+	border: 1px solid rgba(255,255,255,.1);
+    background: rgba(0,0,0,.1);
+    border-radius: 5px;
+    color: #fff;
+}
+.eova-login-body .layui-input:HOVER {
+	border-color: rgb(132, 132, 132)!important;
+}
+
+/* ---------------------------index */
+
+/* 顶部 */
+.layui-layout-admin .layui-header {
+	background-color: #fff!important;
+}
+
+/* 顶部 Logo区 */
+.layui-layout-admin .layui-logo {
+	background-color: #263445 !important;
+}
+
+/* Menu 主色 */
+.layui-side-menu, .layadmin-pagetabs .layui-tab-title li:after, .layadmin-pagetabs .layui-tab-title li.layui-this:after, .layui-layer-admin .layui-layer-title,
+	.layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+	background-color: #263445 !important;
+}
+
+/* Menu 划过 */
+.layui-side-menu a:HOVER {
+	background-color: #001528 !important;
+}
+
+/* Menu 选中 */
+.layui-nav-tree .layui-this>a,
+.layui-nav-tree .layui-this>a>i
+{
+	background-color: #001528 !important;
+	color: rgb(64, 158, 255) !important;
+}
+
+/* 屏蔽首页Tab和Menu的选中滑块效果*/
+.layui-layout-body .layui-nav-bar {
+	display: none;
+}
+
+.layui-layout-admin .layui-header a, .layui-layout-admin .layui-header a cite {
+	color: #f8f8f8;
+}
+
+.layui-layout-admin .layui-header a:hover {
+	color: #fff;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-nav-more {
+	border-top-color: #fbfbfb;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-nav-mored {
+	border-color: transparent;
+	border-bottom-color: #fbfbfb;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-this:after, .layui-layout-admin .layui-header .layui-nav-bar {
+	background-color: #fff;
+	background-color: green;
+}
+
+.layadmin-pagetabs .layui-tab-title li:after {
+	display: none;
+}
+
+.layui-nav-tree .layui-nav-bar{
+	background-color: #409eff;
+}
+
+/* 按钮 */
+.layui-btn,
+.layui-btn-primary:hover
+{
+	background-color: #409eff;
+}
+.layui-btn-primary {
+	background-color: #fff;
+}
+.layui-btn-normal {
+	background-color: #409eff;
+}
+.layui-btn-warm {
+	background-color: #e6a23c;
+}
+.layui-btn-danger {
+	background-color: #dd6161;
+}
+.layui-btn-disabled {
+	background-color: #FBFBFB;
+}
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #409eff;
+    background-color: #409eff;
+    color: #fff;
+}
+.eova-select .select {
+	background-color: rgb(226, 223, 223)!important;
+    color: #333;
+}
+.eova-select button:HOVER {
+	background-color: rgb(226, 223, 223)!important;
+	color: #333!important;
+}
+
+/* Tab */
+.layui-tab-title .layui-this {
+    color: white;
+    background-color: rgb(64, 158, 255)!important;
+    font-size: 10px;
+}
+.layui-this i{
+	color: white!important;
+}
+
+/* Table */
+.layui-table-click {
+	background-color: #F5F7FA!important;
+}
+
+.layui-table-header tr, .layui-table-tool{
+    background-color: #F5F7FA!important;
+}
+
+.layui-table-header .layui-table-cell {
+	color: #909399!important;
+    font-weight: bold!important;
+}
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #409eff;
+    color: rgb(255, 255, 255);
+}
+
+/* 弹窗标题栏 */
+.layui-layer-title {
+	background-color: #409eff!important;
+	color: white!important;
+}
+
+/* 下拉选项 */
+.eova-combo-selected {
+	color: #1890ff!important;
+    font-weight: bold!important;
+    background-color:#FFFFFF!important;
+}
+.eova-combo-selected:hover {
+	color: #1890ff!important;
+	background-color: #F5F7FA!important;
+}
+/* 布尔框 */
+.eova-bool.select, .eova-bool.select em {
+    border-color: #409eff;
+    background-color: #409eff;
+}
+/* 复选框 */
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #409eff!important;
+    background-color: #409eff!important;
+    color: #fff;
+}
+
+/* 文本框 */
+.eova-form-field input, .eova-form-field select, .eova-widget input, .eova-form-field textarea {
+    border-radius: 5px;
+}
+div[class^="eova"]>input[type="text"]:hover, 
+div[class^="eova"]>input[type="text"]:focus,
+textarea:hover {
+    border-color: #409eff !important;
+}
+
+/* 分页 */
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #409eff!important;
+}
+
+/* layer */
+.layui-layer-min:hover cite {
+	background-color:#fff!important;
+}
+.layui-layer-setwin .layui-layer-max:hover {
+	background-position:-32px -40px!important;
+}
+
+/* SVG图标支持 */
+.layui-side-menu .layui-nav .layui-nav-item a .eova-svg {
+	position: absolute;
+    top: 50%;
+    left: 20px;
+    margin-top: -8px;
+    height: 18px;
+	width: 18px;
+}

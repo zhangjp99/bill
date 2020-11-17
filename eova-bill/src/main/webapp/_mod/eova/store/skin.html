@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EOVA应用商店</title>
+<link rel="stylesheet" href="${CDN!STATIC!}/eova/plugins/layui/dist/css/layui.css?v=${VER!}">
+<link rel="stylesheet" href="${CDN!STATIC!}/eova/plugins/eova/theme/layui/eova.css?v=${VER!}">
+<link rel="stylesheet" href="${CDN!STATIC!}/eova/plugins/eova/theme/icon/icon.css?v=${VER!}">
+</head>
+<body style="padding: 10px;">
+
+			<%for(x in mods){%>
+			${x.name}：[${x.group_code}-${x.code}]<br>
+			${x.info} ${x.type == 0 ? '[系统应用]' : ''}<br>
+			<button class="layui-btn layui-btn-danger layui-btn-xs" onclick="singleDeletes()">
+						<i class="layui-icon layui-icon-delete"></i> 卸载
+					</button>
+					<button class="layui-btn layui-btn-warm layui-btn-xs" onclick="singleDeletes()">
+						<i class="layui-icon eova-icon-refresh-1"></i> 升级
+					</button>
+			
+			<%if(x.type == 0){%>
+			<button onclick="window.open('/eova/store/ungrade/${x.id}')">升级</button>
+			<%}else{%>
+<!-- 					<button onclick="window.open('/eova/store/install/1')">安装</button>  -->
+					
+					
+<!-- 					<button class="layui-btn layui-btn-danger layui-btn-xs" onclick="singleDeletes()"> -->
+<!-- 						<i class="layui-icon layui-icon-delete"></i> 升级 -->
+<!-- 					</button> -->
+<!-- 					<button class="layui-btn layui-btn-normal layui-btn-xs" onclick="singleDeletes()"> -->
+<!-- 						<i class="layui-icon eova-icon-play"></i> 启用 -->
+<!-- 					</button> -->
+					
+<!-- 			<button class="layui-btn layui-btn-normal layui-btn-xs" onclick="singleDeletes()"> -->
+<!-- 				<i class="layui-icon eova-icon-add-1"></i> 安装 -->
+<!-- 			</button> -->
+<!-- 					<button class="layui-btn layui-btn-danger layui-btn-xs" onclick="singleDeletes()"> -->
+<!-- 						<i class="layui-icon layui-icon-delete"></i> 卸载 -->
+<!-- 					</button> -->
+<!-- 					<button class="layui-btn layui-btn-normal layui-btn-xs" onclick="singleDeletes()"> -->
+<!-- 						<i class="layui-icon eova-icon-play"></i> 启用 -->
+<!-- 					</button> -->
+<!-- 					<button class="layui-btn layui-btn-warm layui-btn-xs" onclick="singleDeletes()"> -->
+<!-- 						<i class="layui-icon eova-icon-pause"></i> 停用 -->
+<!-- 					</button> -->
+<!-- 					<button onclick="window.open('/eova/store/start/${x.id}')">启用</button> -->
+<!-- 					<button onclick="window.open('/eova/store/stop/${x.id}')">停用</button> -->
+			<%}%>
+			<hr>
+			<%}%>
+			<!-- ：<br> -->
+			<!-- <button onclick="window.open('/eova/admin/install/2')">安装</button>  -->
+			<!-- <button onclick="window.open('/eova/admin/uninstall/2')">卸载</button> -->
+			<!-- <hr> -->
+			
+<!-- 					<h3>主题皮肤</h3> -->
+<!-- 					经典墨绿 钉钉蓝 微信绿 中国红 迷你世界<br> -->
+<!-- 					 众口能调...<br> -->
+			
+<!-- 					<h3>个性化控件</h3> -->
+<!-- 					密码框 数字框 颜色框 复选框 时间线 时间月<br> -->
+<!-- 					要啥有啥...<br> -->
+			
+<!-- 					<h3>业务模版</h3> -->
+<!-- 					你的世界你主宰...<br> -->
+</body>
+</html>

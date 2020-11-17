@@ -1,0 +1,36 @@
+/** 经典黑白墨绿 */
+
+/* 优化菜单子目录背景色, 利于区分不同层级  */
+.layui-nav-itemed>.layui-nav-child {
+	background-color: rgb(0, 0, 0)!important;
+}
+
+/* Table 行高缩小*/
+.layui-table-view .layui-table td, .layui-table-view .layui-table th {
+    padding: 0px!important;
+}
+
+/* 按钮工具栏缩小 */
+.layui-table-tool {
+    min-height: 30px!important;
+    padding: 3px!important;
+}
+
+/* 按钮工具栏缩小 */
+.layui-table-tool {
+    min-height: 30px!important;
+    padding: 5px!important;
+}
+.layui-table-tool-self {
+    top: 5px!important;
+}
+
+/* Tab缩小 */
+.eova-layout .layui-tab-title, .eova-layout .layui-tab-title>li {
+	line-height: 30px;
+	height: 30px;
+}
+.eova-layout .layui-this:after {
+    height: 31px!important;
+    border-width: 1px!important;
+}

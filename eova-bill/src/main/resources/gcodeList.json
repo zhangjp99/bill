@@ -1,0 +1,2084 @@
+{
+    "qx": [
+        {
+            "oqx": "市级",
+            "code": "SL",
+            "name": "上海图书馆",
+            "ename": "Shanghai Library",
+            "tss": [
+                {
+                    "code": "SL",
+                    "oqx": "市级",
+                    "level": "市级",
+                    "name": "上海图书馆",
+                    "ename": "Shanghai Library",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "市级（少儿）",
+            "code": "SS",
+            "name": "上海少儿图书馆",
+            "ename": "Shanghai Children's Library",
+            "tss": [
+                {
+                    "code": "SST",
+                    "oqx": "市级（少儿）",
+                    "level": "市级",
+                    "name": "上海市少儿馆",
+                    "ename": "Shanghai Children's Library",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "闵行区",
+            "code": "MH",
+            "name": "闵行区",
+            "ename": "Minhang District",
+            "tss": [
+                {
+                    "code": "G16",
+                    "oqx": "闵行区",
+                    "level": "区（县）",
+                    "name": "闵行区图书馆",
+                    "ename": "Minhang District Library",
+                    "tss": []
+                },
+                {
+                    "code": "J123",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "七宝镇图书馆",
+                    "ename": "Qi Bao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J124",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "莘庄镇图书馆",
+                    "ename": "Xin Zhuang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J125",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "古美街道图书馆",
+                    "ename": "Gu Mei Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J126",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "新虹街道图书馆",
+                    "ename": "Xin Hong Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J127",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "虹桥镇图书馆",
+                    "ename": "Hong Qiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J128",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "华漕镇图书馆",
+                    "ename": "Hua CaoTown Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J129",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "梅陇镇图书馆",
+                    "ename": "Mei Long Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J130",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "浦江镇图书馆",
+                    "ename": "Pu Jiang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J131",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "马桥镇图书馆",
+                    "ename": "Ma Qiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J132",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "颛桥镇图书馆",
+                    "ename": "Zhuan Jiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J133",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "吴泾镇图书馆",
+                    "ename": "Wu Jing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J134",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "江川图书馆",
+                    "ename": "Jiang Chuan Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J423-F1",
+                    "oqx": "闵行区",
+                    "level": "基层服务点",
+                    "name": "莘庄工业区图书馆",
+                    "ename": "Xin zhuang Industrial Zone Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "浦东新区",
+            "code": "PD",
+            "name": "浦东新区",
+            "ename": "Pudong New Area",
+            "tss": [
+                {
+                    "code": "G17",
+                    "oqx": "浦东新区",
+                    "level": "区（县）",
+                    "name": "浦东图书馆",
+                    "ename": "Pu Dong Library ",
+                    "tss": []
+                },
+                {
+                    "code": "G27",
+                    "oqx": "浦东新区",
+                    "level": "区（县）",
+                    "name": "浦东新区陆家嘴图书馆",
+                    "ename": "Lu Jia Zui Library",
+                    "tss": []
+                },
+                {
+                    "code": "G28",
+                    "oqx": "浦东新区",
+                    "level": "区（县）",
+                    "name": "浦东新区新川沙图书馆",
+                    "ename": "Xin Chuan Sha Library",
+                    "tss": []
+                },
+                {
+                    "code": "G03",
+                    "oqx": "浦东新区",
+                    "level": "区（县）",
+                    "name": "浦东图书馆南汇分馆",
+                    "ename": "Nan Hui Library",
+                    "tss": []
+                },
+                {
+                    "code": "J017",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "大团镇图书馆",
+                    "ename": "Da Tuan Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J018",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "惠南镇图书馆",
+                    "ename": "Hui Nan Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J019",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "航头镇图书馆",
+                    "ename": "Hang Tou Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J020",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "书院镇图书馆",
+                    "ename": "Shu Yuan Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J021",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "祝桥镇图书馆",
+                    "ename": "Zhu Qiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J022",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "周浦镇图书馆",
+                    "ename": "Zhou Pu Town Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J023",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "康桥镇图书馆",
+                    "ename": "Kang Qiao Town Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J024",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "泥城镇图书馆",
+                    "ename": "Ni Cheng Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J025",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "万祥镇图书馆",
+                    "ename": "Wan Qiang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J026",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "老港镇图书馆",
+                    "ename": "Lao Gang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J027",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "新城镇图书馆",
+                    "ename": "Xin Cheng Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J028",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "六灶镇图书馆",
+                    "ename": "Liu Zhao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J029",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "新场镇图书馆",
+                    "ename": "Xin Chang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J030",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "宣桥镇图书馆",
+                    "ename": "Xuan Qiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J031",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "新城镇图书馆",
+                    "ename": "Xin cheng Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J136",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "南码头路街道图书馆",
+                    "ename": "Nan Ma Tou Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J137",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "浦南文化馆图书馆",
+                    "ename": "Pu Nan Culture Center Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J138",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "塘桥街道图书馆",
+                    "ename": "Tang Qiao Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J139",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "上钢新村街道图书馆",
+                    "ename": "Shang Gang New Village Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J140",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "周家渡街道图书馆",
+                    "ename": "Zhou Jia Du Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J141",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "唐镇图书馆",
+                    "ename": "Tang zhen Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J142",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "浦兴街道图书馆",
+                    "ename": "Pu Xing Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J143",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "北蔡镇图书馆",
+                    "ename": "Bei Cai Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J144",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "三林镇图书馆",
+                    "ename": "Sanlin Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J145",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "曹路镇图书馆",
+                    "ename": "Cao Lu Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J146",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "花木街道图书馆",
+                    "ename": "Hua Mu Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J147",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "洋泾街道图书馆",
+                    "ename": "Yang Jing Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J148",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "潍坊街道图书馆",
+                    "ename": "Wei Fang Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J149",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "东明路街道图书馆",
+                    "ename": "Dong Ming Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J150",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "高桥镇图书馆",
+                    "ename": "Gao Qiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J151",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "高东镇图书馆",
+                    "ename": "Gao Dong Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J152",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "张江镇图书馆",
+                    "ename": "Zhang Jiang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J153",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "合庆镇图书馆",
+                    "ename": "He Qing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J154",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "金杨新村街道图书馆",
+                    "ename": "Jin Yang New Village Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J155",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "金桥镇图书馆",
+                    "ename": "Jin Qiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J156",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "高行镇图书馆",
+                    "ename": "Gaohang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J157",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "沪东新村街道图书馆",
+                    "ename": "Hu Dong New Residential Quarter Community Library",
+                    "tss": []
+                },
+                {
+                    "code": "J158",
+                    "oqx": "浦东新区",
+                    "level": "基层服务点",
+                    "name": "陆家嘴街道图书馆",
+                    "ename": "Lu Jia Zui Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "杨浦区",
+            "code": "YP",
+            "name": "杨浦区",
+            "ename": "Yangpu District",
+            "tss": [
+                {
+                    "code": "G12",
+                    "oqx": "杨浦区",
+                    "level": "区（县）",
+                    "name": "杨浦区图书馆",
+                    "ename": "Yang Pu District Library",
+                    "tss": []
+                },
+                {
+                    "code": "J083",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "五角场街道图书馆",
+                    "ename": "Wu Jiao Chang Neighborhood Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J084",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "五角场镇图书馆",
+                    "ename": "Wu Jiao Chang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J085",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "大桥街道图书馆",
+                    "ename": "Da Qiao Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J086",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "殷行街道图书馆",
+                    "ename": "Yin Hang Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J087",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "四平街道图书馆",
+                    "ename": "Si Ping Street Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J088",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "江浦路街道图书馆",
+                    "ename": "Jiangpu Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J089",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "控江路街道图书馆",
+                    "ename": "Kong Jiang Road Neighborhood Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J090",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "延吉街道图书馆",
+                    "ename": "Yan Ji Street Neighborhood Library",
+                    "tss": []
+                },
+                {
+                    "code": "J091",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "长白新村街道图书馆",
+                    "ename": "Chang Bai New Village Neighborhood Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J092",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "定海街道图书馆",
+                    "ename": "Ding Hai Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J093",
+                    "oqx": "杨浦区",
+                    "level": "基层服务点",
+                    "name": "平凉路街道图书馆",
+                    "ename": "Ping Liang Road Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "嘉定区",
+            "code": "JD",
+            "name": "嘉定区",
+            "ename": "Jiading District",
+            "tss": [
+                {
+                    "code": "G19",
+                    "oqx": "嘉定区",
+                    "level": "区（县）",
+                    "name": "嘉定区图书馆",
+                    "ename": "Jia Ding District Library ",
+                    "tss": []
+                },
+                {
+                    "code": "J161",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "安亭镇图书馆",
+                    "ename": "An Ting Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J162",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "江桥镇图书馆",
+                    "ename": "Jiang Qiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J163",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "南翔镇图书馆",
+                    "ename": "Nan Xiang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J164",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "嘉定镇街道图书馆",
+                    "ename": "Jia Ding Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J165",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "真新新村街道图书馆",
+                    "ename": "Zhen Xin New Residential Quarter Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J166",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "新成路街道图书馆",
+                    "ename": "Xin Cheng Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J167",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "菊园新区图书馆",
+                    "ename": "Ju Yuan New Residential Area Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J169",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "马陆镇图书馆",
+                    "ename": "Ma Lu Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J171",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "徐行镇图书馆",
+                    "ename": "Xu Hang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J461",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "外冈镇图书馆",
+                    "ename": "Wai Gang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J462",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "华亭镇图书馆",
+                    "ename": "Hua Ting Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J463",
+                    "oqx": "嘉定区",
+                    "level": "基层服务点",
+                    "name": "嘉定工业区图书馆",
+                    "ename": "Jia Ding Industrial Zone Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "普陀区",
+            "code": "PT",
+            "name": "普陀区",
+            "ename": "Putuo District",
+            "tss": [
+                {
+                    "code": "G14",
+                    "oqx": "普陀区",
+                    "level": "区（县）",
+                    "name": "普陀区图书馆",
+                    "ename": "Pu Tuo District Library",
+                    "tss": []
+                },
+                {
+                    "code": "G30",
+                    "oqx": "普陀区",
+                    "level": "区（县）",
+                    "name": "普陀区少年儿童图书馆",
+                    "ename": "Pu Tuo District Children's Library",
+                    "tss": []
+                },
+                {
+                    "code": "J096",
+                    "oqx": "普陀区",
+                    "level": "基层服务点",
+                    "name": "甘泉路街道图书馆",
+                    "ename": "Gan Qun Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J097",
+                    "oqx": "普陀区",
+                    "level": "基层服务点",
+                    "name": "桃浦镇图书馆",
+                    "ename": "TaoPu Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J098",
+                    "oqx": "普陀区",
+                    "level": "基层服务点",
+                    "name": "长风新村街道图书馆",
+                    "ename": "Chang Feng New Residential Quarter Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J099",
+                    "oqx": "普陀区",
+                    "level": "基层服务点",
+                    "name": "长寿路街道图书馆",
+                    "ename": "Chang Shou Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J100",
+                    "oqx": "普陀区",
+                    "level": "基层服务点",
+                    "name": "宜川路街道图书馆",
+                    "ename": "Yi Chuan Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J101",
+                    "oqx": "普陀区",
+                    "level": "基层服务点",
+                    "name": "曹杨新村街道图书馆",
+                    "ename": "Cao Yang New Residential Quarter Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J102",
+                    "oqx": "普陀区",
+                    "level": "基层服务点",
+                    "name": "真如镇图书馆",
+                    "ename": "Zhen Ru Township Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J103",
+                    "oqx": "普陀区",
+                    "level": "基层服务点",
+                    "name": "石泉路街道图书馆",
+                    "ename": "Shi Quan Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J104",
+                    "oqx": "普陀区",
+                    "level": "基层服务点",
+                    "name": "长征镇图书馆",
+                    "ename": "Chang Zheng Town Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "虹口区",
+            "code": "HK",
+            "name": "虹口区",
+            "ename": "Hongkou District",
+            "tss": [
+                {
+                    "code": "G10",
+                    "oqx": "虹口区",
+                    "level": "区（县）",
+                    "name": "虹口区图书馆乍浦分馆",
+                    "ename": "Hong Kou District Library Za Pu",
+                    "tss": []
+                },
+                {
+                    "code": "G10-X1",
+                    "oqx": "虹口区",
+                    "level": "区（县）",
+                    "name": "虹口区图书馆",
+                    "ename": "Hong Kou District Library",
+                    "tss": []
+                },
+                {
+                    "code": "G11",
+                    "oqx": "虹口区",
+                    "level": "区（县）",
+                    "name": "虹口区图书馆曲阳分馆",
+                    "ename": "Hong Kou District Library Qu Yang",
+                    "tss": []
+                },
+                {
+                    "code": "J072",
+                    "oqx": "虹口区",
+                    "level": "基层服务点",
+                    "name": "广中路街道图书馆",
+                    "ename": "Guang Zhong Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J073",
+                    "oqx": "虹口区",
+                    "level": "基层服务点",
+                    "name": "四川北路街道图书馆",
+                    "ename": "Si Chuan Bei Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J075",
+                    "oqx": "虹口区",
+                    "level": "基层服务点",
+                    "name": "凉城新村街道图书馆",
+                    "ename": "Liang Cheng New Estate Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J076",
+                    "oqx": "虹口区",
+                    "level": "基层服务点",
+                    "name": "曲阳路街道图书馆",
+                    "ename": "Qu Yang Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J078",
+                    "oqx": "虹口区",
+                    "level": "基层服务点",
+                    "name": "江湾镇图书馆",
+                    "ename": "Jiang Wan Township Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J079",
+                    "oqx": "虹口区",
+                    "level": "基层服务点",
+                    "name": "嘉兴路街道图书馆",
+                    "ename": "Jia Xing Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J080",
+                    "oqx": "虹口区",
+                    "level": "基层服务点",
+                    "name": "提篮桥街道图书馆",
+                    "ename": "Ti Lan Qiao Neighborhood Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J081",
+                    "oqx": "虹口区",
+                    "level": "基层服务点",
+                    "name": "欧阳路街道图书馆",
+                    "ename": "Ou Yang Road Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "徐汇区",
+            "code": "XH",
+            "name": "徐汇区",
+            "ename": "Xuhui District",
+            "tss": [
+                {
+                    "code": "G06",
+                    "oqx": "徐汇区",
+                    "level": "区（县）",
+                    "name": "徐汇区图书馆",
+                    "ename": "Xuhui District Library",
+                    "tss": []
+                },
+                {
+                    "code": "J037",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "西南文化艺术中心图书馆",
+                    "ename": "Service Point at Southwest Culture and Art Center",
+                    "tss": []
+                },
+                {
+                    "code": "J038",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "康健新村街道图书馆",
+                    "ename": "Kang Jian Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J039",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "凌云街道图书馆",
+                    "ename": "Ling Yun Neighborhood Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J040",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "田林街道图书馆",
+                    "ename": "Tian Lin Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J041",
+                    "oqx": "徐汇区",
+                    "level": "其它",
+                    "name": "美罗大厦图书室",
+                    "ename": "Mei Luo Plaza Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J042",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "徐家汇街道图书馆",
+                    "ename": "Xu Jia Hui Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J043",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "龙华街道图书馆",
+                    "ename": "Long Hua Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J044",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "天平街道图书馆",
+                    "ename": "Tian Ping Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J045",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "华泾镇图书馆",
+                    "ename": "Hua JingTown Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J046",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "枫林路街道图书馆",
+                    "ename": "Feng Lin Road Neighborhood Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J047",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "虹梅路街道图书馆",
+                    "ename": "Hong Mei Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J048",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "斜土路街道图书馆",
+                    "ename": "Xie Tu Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J049",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "湖南路街道图书馆",
+                    "ename": "Hu Nan Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J050",
+                    "oqx": "徐汇区",
+                    "level": "基层服务点",
+                    "name": "漕河泾街道图书馆",
+                    "ename": "Cao He Jing Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "闸北区",
+            "code": "ZB",
+            "name": "闸北区",
+            "ename": "Zhabei District",
+            "tss": [
+                {
+                    "code": "G09",
+                    "oqx": "闸北区",
+                    "level": "区（县）",
+                    "name": "闸北区图书馆",
+                    "ename": "Zha Bei District Library",
+                    "tss": []
+                },
+                {
+                    "code": "g29",
+                    "oqx": "闸北区",
+                    "level": "区（县）",
+                    "name": "闸北区少年儿童图书馆",
+                    "ename": "Zha Bei District Children's Library",
+                    "tss": []
+                },
+                {
+                    "code": "J062",
+                    "oqx": "闸北区",
+                    "level": "基层服务点",
+                    "name": "芷江西路街道图书馆",
+                    "ename": "Zhi Jiang Xi Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J063",
+                    "oqx": "闸北区",
+                    "level": "基层服务点",
+                    "name": "临汾路街道图书馆",
+                    "ename": "Lin Fen Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J064",
+                    "oqx": "闸北区",
+                    "level": "基层服务点",
+                    "name": "宝山路街道图书馆",
+                    "ename": "Bao Shan Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J065",
+                    "oqx": "闸北区",
+                    "level": "基层服务点",
+                    "name": "彭浦新村街道图书馆",
+                    "ename": "Peng Pu New Residential Quarter Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J066",
+                    "oqx": "闸北区",
+                    "level": "基层服务点",
+                    "name": "共和新路街道图书馆",
+                    "ename": "Gong He Xin Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J067",
+                    "oqx": "闸北区",
+                    "level": "基层服务点",
+                    "name": "北站街道图书馆",
+                    "ename": "Bei Zhan Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J068",
+                    "oqx": "闸北区",
+                    "level": "基层服务点",
+                    "name": "彭浦镇图书馆",
+                    "ename": "Peng Pu Township Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J069",
+                    "oqx": "闸北区",
+                    "level": "基层服务点",
+                    "name": "天目西路街道图书馆",
+                    "ename": "Tian Mu Xi Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J070",
+                    "oqx": "闸北区",
+                    "level": "基层服务点",
+                    "name": "大宁路街道图书馆",
+                    "ename": "Da Ning Road Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "松江区",
+            "code": "SJ",
+            "name": "松江区",
+            "ename": "Songjiang District",
+            "tss": [
+                {
+                    "code": "G26",
+                    "oqx": "松江区",
+                    "level": "区（县）",
+                    "name": "松江区图书馆",
+                    "ename": "Song Jiang District Library",
+                    "tss": []
+                },
+                {
+                    "code": "J226",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "岳阳街道图书馆",
+                    "ename": "Yue Yang Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J227",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "中山街道图书馆",
+                    "ename": "Zhong Shan Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J228",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "永丰街道图书馆",
+                    "ename": "Yong Feng Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J229",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "车墩镇图书馆",
+                    "ename": "Che Dun Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J230",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "叶榭镇图书馆",
+                    "ename": "Ye Xie Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J231",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "方松街道图书馆",
+                    "ename": "Fang Song Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J232",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "石湖荡镇图书馆",
+                    "ename": "Shi Hu Dang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J233",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "新浜镇图书馆",
+                    "ename": "Xin Bin Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J234",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "泖港镇图书馆",
+                    "ename": "Mao Gang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J235",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "小昆山镇图书馆",
+                    "ename": "Xiao Kun Shan Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J236",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "泗泾镇图书馆",
+                    "ename": "Si Jing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J237",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "洞泾镇图书馆",
+                    "ename": "Dong Jing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J238",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "九亭镇图书馆",
+                    "ename": "Jiu Ting Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J239",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "佘山镇图书馆",
+                    "ename": "She Shan Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J240",
+                    "oqx": "松江区",
+                    "level": "基层服务点",
+                    "name": "新桥镇图书馆",
+                    "ename": "Xin Qiao Town Service Point; 22",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "长宁区",
+            "code": "CN",
+            "name": "长宁区",
+            "ename": "Changning District",
+            "tss": [
+                {
+                    "code": "G08",
+                    "oqx": "长宁区",
+                    "level": "区（县）",
+                    "name": "长宁区图书馆",
+                    "ename": "Chang Ning District Library ",
+                    "tss": []
+                },
+                {
+                    "code": "J051",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "天山街道图书馆",
+                    "ename": "Tian Shan Street Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J052",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "程家桥街道图书馆",
+                    "ename": "Cheng Jia Qiao Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J053",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "华阳街道图书馆",
+                    "ename": "Hua Yang Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J054",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "江苏路街道图书馆",
+                    "ename": "Jiang Su Road Neighborhood Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J055",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "新华路街道图书馆",
+                    "ename": "Xin Hua Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J056",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "北新泾街道图书馆",
+                    "ename": "Bei Xin Jing Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J057",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "周家桥街道图书馆",
+                    "ename": "Zhou Jia Qiao Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J058",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "虹桥街道图书馆",
+                    "ename": "Hong Qiao Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J059",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "新泾镇图书馆",
+                    "ename": "Xin Jing Township Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J060",
+                    "oqx": "长宁区",
+                    "level": "基层服务点",
+                    "name": "仙霞新村街道图书馆",
+                    "ename": "Xian Xia New Residential Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "奉贤区",
+            "code": "FX",
+            "name": "奉贤区",
+            "ename": "Fengxian District",
+            "tss": [
+                {
+                    "code": "G24",
+                    "oqx": "奉贤区",
+                    "level": "区（县）",
+                    "name": "奉贤区图书馆",
+                    "ename": "Feng Xian District Library",
+                    "tss": []
+                },
+                {
+                    "code": "J202",
+                    "oqx": "奉贤区",
+                    "level": "基层服务点",
+                    "name": "奉城镇图书馆",
+                    "ename": "Feng Xian Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J205",
+                    "oqx": "奉贤区",
+                    "level": "基层服务点",
+                    "name": "海湾镇图书馆",
+                    "ename": "Hai Wan Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J208",
+                    "oqx": "奉贤区",
+                    "level": "基层服务点",
+                    "name": "金汇镇图书馆",
+                    "ename": "Jin Hui Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J208-F2",
+                    "oqx": "奉贤区",
+                    "level": "基层服务点",
+                    "name": "金汇镇图书馆(泰日)",
+                    "ename": "Jin Hui Town Tai Ri Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J203",
+                    "oqx": "奉贤区",
+                    "level": "基层服务点",
+                    "name": "南桥镇图书馆",
+                    "ename": "Nan Qiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J207",
+                    "oqx": "奉贤区",
+                    "level": "基层服务点",
+                    "name": "青村镇图书馆",
+                    "ename": "Qing Chun Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J502",
+                    "oqx": "奉贤区",
+                    "level": "基层服务点",
+                    "name": "四团镇图书馆",
+                    "ename": "Si Tuan Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J209",
+                    "oqx": "奉贤区",
+                    "level": "基层服务点",
+                    "name": "柘林镇图书馆",
+                    "ename": "Tuo Lin Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J210",
+                    "oqx": "奉贤区",
+                    "level": "基层服务点",
+                    "name": "庄行镇图书馆",
+                    "ename": "Zhuang Xing Town Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "青浦区",
+            "code": "QP",
+            "name": "青浦区",
+            "ename": "Qingpu District",
+            "tss": [
+                {
+                    "code": "G22",
+                    "oqx": "青浦区",
+                    "level": "区（县）",
+                    "name": "青浦区图书馆",
+                    "ename": "Qing Pu District Library",
+                    "tss": []
+                },
+                {
+                    "code": "J189",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "重固镇图书馆",
+                    "ename": "Zhong Gu Town Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J190",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "赵巷镇图书馆",
+                    "ename": "Zhao Xiang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J191",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "白鹤镇图书馆",
+                    "ename": "Bai He Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J192",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "华新镇图书馆",
+                    "ename": "Hua Xin Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J193",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "朱家角镇图书馆",
+                    "ename": "Zhu Jia Jiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J194",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "金泽镇图书馆",
+                    "ename": "Jin Ze Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J195",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "练塘镇图书馆",
+                    "ename": "Lian Tang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J196",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "夏阳街道图书馆",
+                    "ename": "Xia Yang Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J197",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "徐泾镇图书馆",
+                    "ename": "Xu Jing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J198",
+                    "oqx": "青浦区",
+                    "level": "基层服务点",
+                    "name": "香花桥街道图书馆",
+                    "ename": "Xiang Hua Qiao Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "黄浦区",
+            "code": "HP",
+            "name": "黄浦区",
+            "ename": "Huangpu District",
+            "tss": [
+                {
+                    "code": "G01",
+                    "oqx": "黄浦区",
+                    "level": "区（县）",
+                    "name": "黄浦区图书馆",
+                    "ename": "Huang Pu District Library",
+                    "tss": []
+                },
+                {
+                    "code": "G05",
+                    "oqx": "黄浦区",
+                    "level": "区（县）",
+                    "name": "黄浦区图书馆",
+                    "ename": "Huang Pu District Library",
+                    "tss": []
+                },
+                {
+                    "code": "G04",
+                    "oqx": "黄浦区",
+                    "level": "区（县）",
+                    "name": "明复图书馆",
+                    "ename": "Ming Fu Library",
+                    "tss": []
+                },
+                {
+                    "code": "J001",
+                    "oqx": "黄浦区",
+                    "level": "基层服务点",
+                    "name": "半淞园路街道图书馆",
+                    "ename": "Ban Song Yuan Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J002",
+                    "oqx": "黄浦区",
+                    "level": "基层服务点",
+                    "name": "南京东路街道图书馆",
+                    "ename": "Nan Jing Dong Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J003",
+                    "oqx": "黄浦区",
+                    "level": "基层服务点",
+                    "name": "小东门街道图书馆",
+                    "ename": "Xiao Dong Men Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J004",
+                    "oqx": "黄浦区",
+                    "level": "基层服务点",
+                    "name": "外滩街道图书馆",
+                    "ename": "Bund Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J006",
+                    "oqx": "黄浦区",
+                    "level": "基层服务点",
+                    "name": "豫园街道图书馆",
+                    "ename": "Yu Yuan Garden Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J032",
+                    "oqx": "黄浦区",
+                    "level": "基层服务点",
+                    "name": "五里桥街道图书馆",
+                    "ename": "Wu Li Qiao Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J033",
+                    "oqx": "黄浦区",
+                    "level": "基层服务点",
+                    "name": "打浦桥街道图书馆",
+                    "ename": "Da Pu Qiao Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J034",
+                    "oqx": "黄浦区",
+                    "level": "基层服务点",
+                    "name": "淮海中路街道图书馆",
+                    "ename": "Huai Hai Zhong Lu Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J035",
+                    "oqx": "黄浦区",
+                    "level": "基层服务点",
+                    "name": "瑞金二路街道图书馆",
+                    "ename": "Rui Jin Er Lu Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "静安区",
+            "code": "JA",
+            "name": "静安区",
+            "ename": "Jing'an District",
+            "tss": [
+                {
+                    "code": "G02",
+                    "oqx": "静安区",
+                    "level": "区（县）",
+                    "name": "静安区图书馆",
+                    "ename": "Jing'an District Library ",
+                    "tss": []
+                },
+                {
+                    "code": "J011",
+                    "oqx": "静安区",
+                    "level": "基层服务点",
+                    "name": "曹家渡街道图书馆",
+                    "ename": "Cao Jia Du Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J012",
+                    "oqx": "静安区",
+                    "level": "基层服务点",
+                    "name": "石门二路街道图书馆",
+                    "ename": "Shi Men Er Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J013",
+                    "oqx": "静安区",
+                    "level": "其它",
+                    "name": "达安会所星之图书室",
+                    "ename": "Da'an Club Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J014",
+                    "oqx": "静安区",
+                    "level": "基层服务点",
+                    "name": "江宁路街道图书馆",
+                    "ename": "Jang Ning Road Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J015",
+                    "oqx": "静安区",
+                    "level": "基层服务点",
+                    "name": "静安寺街道图书馆",
+                    "ename": "Jing'an Neighborhood Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J016",
+                    "oqx": "静安区",
+                    "level": "基层服务点",
+                    "name": "南京西路街道图书馆",
+                    "ename": "Nan Jing Xi Road Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "宝山区",
+            "code": "BS",
+            "name": "宝山区",
+            "ename": "Baoshan District",
+            "tss": [
+                {
+                    "code": "G15",
+                    "oqx": "宝山区",
+                    "level": "区（县）",
+                    "name": "宝山区图书馆",
+                    "ename": "Bao Shan District Library",
+                    "tss": []
+                },
+                {
+                    "code": "J106",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "友谊路街道图书馆",
+                    "ename": "You Yi Road Neighborhood Library",
+                    "tss": []
+                },
+                {
+                    "code": "J107",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "吴淞街道图书馆",
+                    "ename": "Wu Song Neighborhood Library",
+                    "tss": []
+                },
+                {
+                    "code": "J108",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "张庙街道图书馆",
+                    "ename": "Zhang Miao Neighborhood Library",
+                    "tss": []
+                },
+                {
+                    "code": "J109",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "月浦镇图书馆",
+                    "ename": "Yue Pu Town Library",
+                    "tss": []
+                },
+                {
+                    "code": "J110",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "杨行镇图书馆",
+                    "ename": "Yang Hang Town Library",
+                    "tss": []
+                },
+                {
+                    "code": "J111",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "罗店镇图书馆",
+                    "ename": "Luo Dian Town Library",
+                    "tss": []
+                },
+                {
+                    "code": "J112",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "罗泾镇图书馆",
+                    "ename": "Luo Jing Town Library",
+                    "tss": []
+                },
+                {
+                    "code": "J113",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "顾村镇图书馆",
+                    "ename": "Gu Cun Town Library",
+                    "tss": []
+                },
+                {
+                    "code": "J114",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "庙行镇图书馆",
+                    "ename": "Miao Hang Town Library",
+                    "tss": []
+                },
+                {
+                    "code": "J115",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "高境镇图书馆",
+                    "ename": "Gao Jing Town Library",
+                    "tss": []
+                },
+                {
+                    "code": "J116",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "大场镇图书馆",
+                    "ename": "Da Chang Town Library",
+                    "tss": []
+                },
+                {
+                    "code": "J117",
+                    "oqx": "宝山区",
+                    "level": "基层服务点",
+                    "name": "淞南镇图书馆",
+                    "ename": "Song Nan Town Library",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "崇明县",
+            "code": "CM",
+            "name": "崇明县",
+            "ename": "Chongming County",
+            "tss": [
+                {
+                    "code": "G25",
+                    "oqx": "崇明县",
+                    "level": "区（县）",
+                    "name": "崇明县图书馆",
+                    "ename": "Chong Ming County Library",
+                    "tss": []
+                },
+                {
+                    "code": "J212",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "新河镇图书馆",
+                    "ename": "Xin He Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J213",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "新村镇图书馆",
+                    "ename": "Xing Cun Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J214",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "港西镇图书馆",
+                    "ename": "Gang Xi Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J215",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "城桥镇图书馆",
+                    "ename": "Cheng Qiao Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J216",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "港沿镇图书馆",
+                    "ename": "Gang Yan Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J217",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "向化镇图书馆",
+                    "ename": "Xiang He Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J218",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "陈家镇图书馆",
+                    "ename": "Chen Jia Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J219",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "新海镇图书馆",
+                    "ename": "Xin Hai Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J220",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "东平镇图书馆",
+                    "ename": "Dong Ping Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J221",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "绿华镇图书馆",
+                    "ename": "Lv Hua Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J222",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "庙镇镇图书馆",
+                    "ename": "Miao Zheng Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J223",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "建设镇图书馆",
+                    "ename": "Jian She Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J224",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "竖新镇图书馆",
+                    "ename": "Shu Xin Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J225",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "中兴镇图书馆",
+                    "ename": "Zhong Xing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J511",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "三星镇图书馆",
+                    "ename": "San Xing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J512",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "长兴乡图书馆",
+                    "ename": "Chang Xing Town Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J513",
+                    "oqx": "崇明县",
+                    "level": "基层服务点",
+                    "name": "横沙乡图书馆",
+                    "ename": "Heng Sha Town Service Point ",
+                    "tss": []
+                }
+            ]
+        },
+        {
+            "oqx": "金山区",
+            "code": "JS",
+            "name": "金山区",
+            "ename": "Jinshan District",
+            "tss": [
+                {
+                    "code": "G20",
+                    "oqx": "金山区",
+                    "level": "区（县）",
+                    "name": "金山区图书馆",
+                    "ename": "Jin Shan District Library",
+                    "tss": []
+                },
+                {
+                    "code": "J173",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "枫泾镇图书馆",
+                    "ename": "Feng Jing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J174",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "漕泾镇图书馆",
+                    "ename": "Cao Jing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J175",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "山阳镇图书馆",
+                    "ename": "Shan Yang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J176",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "亭林镇图书馆",
+                    "ename": "Ting Lin Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J177",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "廊下镇图书馆",
+                    "ename": "Lang Xia Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J178",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "朱泾镇图书馆",
+                    "ename": "Zhu Jing Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J179",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "金山工业区图书馆",
+                    "ename": "Industrial District Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J180",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "吕巷镇图书馆",
+                    "ename": "Lv Xiang Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J181",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "张堰镇图书馆",
+                    "ename": "Zhang Yan Town Service Point",
+                    "tss": []
+                },
+                {
+                    "code": "J182",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "金山卫镇图书馆",
+                    "ename": "Jin Shan Wei Town Service Point ",
+                    "tss": []
+                },
+                {
+                    "code": "J183",
+                    "oqx": "金山区",
+                    "level": "基层服务点",
+                    "name": "石化街道图书馆",
+                    "ename": "Shi Hua Neighborhood Service Point",
+                    "tss": []
+                }
+            ]
+        }
+    ]
+}

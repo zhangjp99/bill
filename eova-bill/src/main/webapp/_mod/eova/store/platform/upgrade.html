@@ -1,0 +1,78 @@
+<%layout("/eova/layout/base.html",{'title' : '更新'}){%>
+<style>
+a {
+	color: blue;
+	font-weight: bold;
+}
+</style>
+<h1 style="padding: 10px; ">
+	<h2>EOVA-PRO 更新版本列表</h2>
+	<br>
+	<b style="color: red">当前版本号: ${version}</b>
+	<%for(x in list){%>
+	<br><br>
+	<span class="layui-badge layui-bg-badge">${x.version}</span> 
+	<span class="layui-badge-rim">${x.create_time}</span>
+	<span class="layui-badge layui-bg-gray">${isTrue(x.is_skip) ? '可跳过的版本' : '必须升级的版本'}</span> 
+		<hr>
+<pre>${x.content}</pre>
+	
+		<%if(xLP.last || !isTrue(x.is_skip)){//  最后一个, 或者不可忽略%>
+		<br>
+		<button class="layui-btn layui-btn-normal" data-down="${x.url}" data-version="${x.version}" onclick="upgrade('/eova/store/doPlatformUpgrade', $(this))">
+			<i class="layui-icon layui-icon-release"></i> 升级到${x.version}
+		</button>
+		<hr>
+		
+		<%if(!isTrue(x.is_skip))break; }%>
+	<%}%>
+	<%if(list.~size == 0){%>
+	<hr>
+	<h2>
+	未获取到新版本, 请确认是否已升级到最新版本!
+	</h2>
+	<%}%>
+</div>
+
+<script type="text/javascript">
+function upgrade(action, $btn){
+	var ver = $btn.data('version');
+	var down = $btn.data('down');
+	
+	layer.confirm('确定一键升级到V' + ver, {
+		title : '确定升级',
+		icon : 3,
+		btn : [ '确定', '取消' ]
+	}, function(index) {
+		layer.msg("正在更新, 请勿中断, 否则会垮掉!", {icon: 16 ,shade: 0.01, time: 20*1000});
+		
+		$.eovaPost(action, function(ret){
+			
+			layer.closeAll('loading');
+			
+			if (ret.state == 'ok') {
+				let info = `
+升级完成,请按如下步骤操作:<br>
+1.停止服务<br>
+2.刷新Maven以引入最新的包<br>
+3.检查当前工程是否有异常, 有异常请解决<br>
+4.检查配置项是否有变更,确认无误<br>
+5.启动服务<br>
+6.验证是否升级成功`;
+				$.alert(info);
+				$btn.html('已升级完成');
+				$btn.removeClass('layui-btn-normal');
+				$btn.addClass('layui-btn-disabled');
+			} else {
+				$.error(ret.msg);
+			}
+		},{
+			down : down,
+			ver : ver
+		});
+		layer.close(index);
+	});
+}
+</script>
+
+<%}%>

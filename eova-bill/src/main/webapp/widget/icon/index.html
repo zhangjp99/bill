@@ -1,0 +1,118 @@
+<%var BASE = '/_eova/icon'; // 默认ICON配置 %>
+<style type="text/css">
+    #icon_panel button{margin:2px;padding:2px;background-color:#fff;color:#666;border:1px solid #e2e2e2;height:40px;width:40px}#icon_panel button:hover{border:1px solid #009688}#icon_panel button .icon{margin:2px;padding:2px;height:25px;width:25px;vertical-align:-0.15em;fill:currentColor;overflow:hidden}
+</style>
+
+<input id ="${item.en}" name="${name}" value="${value!field.defaulter}" style="width: 203px;padding-left: 10px" onfocus="openIcons()">
+
+<script type="text/html" id="template-icons">
+<div>
+    <div id="icon_panel" class="icon_panel">
+        Loading...
+    </div>
+    <div style="text-align: center;padding: 5px;">
+        <a class="layui-btn layui-btn-sm" id="btmPreviousPage" onclick="previousIconPage();">上一页</a>
+        <a class="layui-btn layui-btn-sm layui-btn-primary" id="pageInfo" style="width: 70px;"></a>
+        <a class="layui-btn layui-btn-sm" id="btmNextPage" onclick="nextIconPage();">下一页</a>
+    </div>
+</div>
+</script>
+
+<script src="${BASE}/iconfont.js"></script>
+<script>
+    var EOVAICONS = [];
+    var iconPage = 0; // 页面号
+    var iconSize = EOVAICONS.length; // 图标总数
+    var columnSize = 12; // 图标列数
+    var rowSize = 12; // 图标行数
+    var iconPageSize = rowSize * columnSize; // 每页图标数
+    var iconPageCount = parseInt(iconSize / iconPageSize) + (parseInt(iconSize % iconPageSize) > 0 ? 1 : 0); // 页面大小
+
+    var iconIndex;
+    var openIcons = function () {
+        iconIndex =layer.open({
+            title: '请选择图标',
+            area: ['835px', '540px'],
+            content:  $.render('template-icons', {}),
+            btn:[]
+        });
+
+        $.getJSON('${BASE}/iconfont.json', function (data) {
+            EOVAICONS = [];
+            data.glyphs.forEach(item => {
+                EOVAICONS.push(data.css_prefix_text + item.font_class);
+            });
+            $('#btmPreviousPage').addClass('layui-btn-disabled');
+
+            iconPage = 0; // 页面号
+            iconSize = EOVAICONS.length; // 图标总数
+            columnSize = 12; // 图标列数
+            rowSize = 12; // 图标行数
+            iconPageSize = rowSize * columnSize; // 每页图标数
+            iconPageCount = parseInt(iconSize / iconPageSize) + (parseInt(iconSize % iconPageSize) > 0 ? 1 : 0); // 页面大小
+            refreshIconPanel(iconPage);
+
+        });
+
+    };
+
+
+    function refreshIconPanel(pageIndex) {
+        // 显示页号
+        $("#pageInfo").html("&nbsp;" + (pageIndex + 1) + " / " + iconPageCount + "&nbsp;");
+        var iconPanel = $("#icon_panel"); // 图标面板
+
+        // 计算图标数组坐标偏移量
+        var start = pageIndex * iconPageSize;
+        var end = start + iconPageSize;
+        // 如果结束位置大于图标数，则结束位置等于图标数
+        if (end > iconSize) end = iconSize;
+        // 清除图标面板
+        iconPanel.empty();
+        // 增加图标
+        for (var i = start; i < end; i++) {
+            var iconName = "#" + EOVAICONS[i];
+
+            $('<button data-icon="'+ EOVAICONS[i] +'"><svg class="icon" aria-hidden="true"><use xlink:href="' + iconName + '"></use></svg></button>').appendTo(iconPanel);
+
+        }
+
+        // 单双击事件的操作
+        $("#icon_panel button").click(function(){
+            $('#${item.en}').val($(this).data('icon'));
+            layer.close(iconIndex);
+        }).dblclick(function(){
+            $('#${item.en}').val($(this).data('icon'));
+            // 模拟点击确认
+            // parent.$('#icon_dialog').parent().find('.layui-layer-btn0').trigger('click');
+        });
+
+    }
+
+    // 显示下一页图标
+    function nextIconPage() {
+        if ((iconPage + 1) == iconPageCount) return;
+        iconPage++;
+        if (iconPage == (iconPageCount - 1)) {
+            $('#btmNextPage').addClass('layui-btn-disabled');
+        } else {
+            $('#btmNextPage').removeClass('layui-btn-disabled');
+        }
+        $('#btmPreviousPage').removeClass('layui-btn-disabled');
+        refreshIconPanel(iconPage);
+    }
+
+    // 显示上一页图标
+    function previousIconPage() {
+        if ((iconPage - 1) < 0) return;
+        iconPage--;
+        if (iconPage == 0) {
+            $('#btmPreviousPage').addClass('layui-btn-disabled');
+        } else {
+            $('#btmPreviousPage').removeClass('layui-btn-disabled');
+        }
+        $('#btmNextPage').removeClass('layui-btn-disabled');
+        refreshIconPanel(iconPage);
+    }
+
+</script>

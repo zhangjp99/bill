@@ -1,0 +1,80 @@
+		<div class="ui vertical menu" style="width: 100%;">
+			<a class="item" href="/my/store" style="color: red;font-weight: bold;font-size: 16px!important;"><i class="blue gem icon"></i>钻石商城</a>
+		</div>
+		
+		<div class="ui vertical menu" style="width: 100%;">
+			#if(isMy)
+				<div class="item">
+					<div class="header">产品与服务<a class="ui mini red empty circular label"></a></div>
+					<div class="menu">
+					#if(me.service.val > 0)
+						<a class="item" href="/service/platform" target="_blank">EOVA-PRO</a>
+	<!-- 					<a class="item" href="/server/issue" target="_blank">简单问题管理</a> -->
+	<!-- 					<a class="item" href="/app" target="_blank">简单配置中心</a> -->
+	<!-- 					<a class="item" href="/app" target="_blank">简单协同门户</a> -->
+						<a class="item" href="/apppro" target="_blank">专业版应用</a>
+					#else
+						<a class="item" href="/eovapro#commerces" target="_blank">购买专业版</a>
+					#end
+					</div>
+				</div>
+				<a class="item" href="/app" target="_blank">开源版应用</a>
+	<!-- 			<div class="item"> -->
+	<!-- 				<div class="header">我的应用<a class="ui mini red empty circular label"></a></div> -->
+	<!-- 				<div class="menu"> -->
+	<!-- 					#if(me.service.val > 0) -->
+						
+	<!-- 					#end -->
+	<!-- 				</div> -->
+	<!-- 			</div> -->
+	
+				<div class="item">
+					<div class="header">我的动态</div>
+					<div class="menu">
+						<a class="item" href="/my">所有动态</a>
+						<a class="item" href="/my/atme">@到我的</a>
+						<a class="item" href="/my/reply">我回复的</a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="header">我的主题</div>
+					<div class="menu">
+						<a class="item" href="/my/topic/question">我的问题</a>
+						<a class="item" href="/my/topic/share">我的分享</a>
+						<a class="item" href="/my/topic/bug">我的BUG</a>
+						<a class="item" href="/my/topic/idea">我的需求</a>
+					</div>
+				</div>
+				<a class="item" href="/my/trade">我的充值</a>
+				<a class="item" href="/my/donate">我的捐赠</a>
+				<a class="item" href="/my/support">我的求助</a>
+				<a class="item" href="/my/avatar">修改头像</a>
+				
+				#if(_me.isAdmin??)
+				<div class="item">
+					<div class="header">系统管理</div>
+					<div class="menu">
+						<a class="item" href="/admin/pay/trade">充值审核</a>
+						<a class="item" href="/admin/pay">捐赠管理</a>
+						<a class="item" href="/runing/8008208820-start" target="_blank">开始营业</a>
+						<a class="item" href="/runing/8008208820-stop" target="_blank">暂停营业</a>
+					</div>
+				</div>
+				<a class="fluid ui blue button" href="/chat/server" target="_blank" style="margin-top: 5px;">
+					<i class="comments icon"></i>开始接客
+				</a>
+				#end
+			#else
+			<div class="item">
+				<div class="header">Ta的内容</div>
+				<div class="menu">
+					<a class="item" href="/ta/#(me.id)">Ta的动态</a>
+					<a class="item" href="/ta/reply?taid=#(me.id)">Ta回复的</a>
+					<a class="item" href="/ta/topic/question?taid=#(me.id)">Ta的问题</a>
+					<a class="item" href="/ta/topic/share?taid=#(me.id)">Ta的分享</a>
+					<a class="item" href="/ta/topic/bug?taid=#(me.id)">Ta的BUG</a>
+					<a class="item" href="/ta/topic/idea?taid=#(me.id)">Ta的需求</a>
+				</div>
+			</div>
+			#end
+		</div>

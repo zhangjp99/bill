@@ -1,0 +1,224 @@
+<%layout("/eova/layout/base.html",{'title' : '已安装应用'}){%>
+<style>
+input {
+	width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+</style>
+<div style="padding: 10px; ">
+	<%if(isTrue(devMode!)){%>
+	<h3 style="font-weight: bold;font-size: 16px;color: red;">[开发者模式：请勿在生产环境开启此模式]</h3>
+
+<%if(!isTrue(isServer!)){%>
+<pre style="border: 1px solid rgba(144, 139, 139, 0.52);">
+// 请修改启动代码以支持主动重启(V3.6.0提供支持)
+public class AppConfig extends EovaConfig {
+
+	public static void main(String[] args) {
+		EovaSystem.server = UndertowServer.create(AppConfig.class).addSystemClassPrefix("com.eova.config.EovaSystem");
+		EovaSystem.server.addHotSwapClassPrefix("org.beetl.").addHotSwapClassPrefix("com.eova.").start();
+	}
+	
+}
+// 热重启模式需要启用热加载配置: 
+devMode = true
+undertow.devMode=true
+</pre>
+<%} else {%>
+<h3 style="font-weight: bold;font-size: 16px;color: red;">[热重启模式：[安装]、[更新]、[启用]  操作完成后会自动重启并重新加载MOD]</h3>
+<%}%>
+
+	<br>
+	<%}%>
+	<%for(x in mods){%>
+		${x.name}：[${x.group_code}-${x.code}-${x.version}] 
+		<label><input type="checkbox" name="enabled" value="${x.id}" ${x.status == 1 ? 'checked' : ''}> 是否启用 </label>
+		<br> 
+		${x.info} ${x.type == 0 ? '[系统应用]' : ''}
+		<br>
+		<%if(isTrue(devMode!)){%>
+		<button class="layui-btn layui-btn-danger layui-btn-xs" onclick="uninstall('/eova/store/uninstall/${x.id}')">
+			<i class="layui-icon layui-icon-delete"></i> 卸载
+		</button>
+		<button class="layui-btn layui-btn-warm layui-btn-xs version" data-id="${x.id}" data-version="${x.version}" style="display: none;">
+			<i class="layui-icon eova-icon-tips"></i>
+		</button>
+		
+		<a class="layui-btn layui-btn-primary layui-btn-xs" href="/eova/store/update/${x.id}" target="_blank">
+			<i class="layui-icon eova-icon-refresh"> 本地更新</i>
+		</a>
+		<%}%>
+		<hr>
+	<%}%>
+	${mods.~size == 0 ? '还没有安装任何扩展应用, 快去安装你喜欢的应用吧!' : ''}
+	
+	<%if(isTrue(devMode!)){%>
+	<a class="layui-btn layui-btn-primary layui-btn-xs" href="/eova/store/add" target="_blank">
+		<i class="layui-icon eova-icon-add-1"></i> 安装本地扩展应用
+	</a>
+	<a class="layui-btn layui-btn-primary layui-btn-xs" href="#" onclick="checkUpdate();">
+		<i class="layui-icon eova-icon-refresh"></i> 检查更新
+	</a>
+	<%}%>
+		
+</div>
+
+<script>
+
+$(function(){
+	// 禁用/启用 事件
+	updateStatus();
+	// 延迟5分钟 检查更新
+	setTimeout(function(){checkUpdate()}, 1000 * 60 * 5);
+});
+
+// 检查更新
+function checkUpdate(){
+	console.log("自动检查更新");
+
+	$('.version').each(function(i, e){
+		var $btn = $(e);
+		var id = $btn.data('id');
+		var version = $btn.data('version');
+		$.ajax({
+			async: true,
+			type: 'POST',
+			data: {version : version},
+			url: '/eova/store/checkUpdate/' + id,
+			dataType: "json",
+			error: function(){
+				console.log('网络异常, 无法检查新版本');
+			},
+			success: function(ret){
+				if (ret.state == 'ok') {
+					$btn.text('发现新版本' + ret.data.version);
+					$btn.show();
+					
+					$btn.click(function(){
+						layer.open({
+							  type: 1
+							  ,title: ret.data.version + ' 更新介绍' 
+							  ,closeBtn: false
+							  ,area: ['800px', '500px']
+							  //,shade: 0.8
+							  ,id: 'update' + ret.data.id
+							  ,resize: false
+							  ,btn: ['立即升级', '下次再说']
+							  ,btnAlign: 'c'
+							  ,moveType: 1 //拖拽模式，0或者1
+							  ,content: '<div style="padding: 10px; "><pre>'+ ret.data.info +'</pre></div>'
+							  ,yes: function(index){
+								  layer.msg("正在升级...", {icon: 16 ,shade: 0.01, time: 20*1000});
+									
+									$.eovaPost('/eova/store/upgrade/' + id, function(ret){
+	
+										layer.closeAll('loading');
+										
+										if (ret.state == 'ok') {
+											layer.closeAll();
+											parent.$.msg('升级成功!');
+											location.reload();
+										} else {
+											$.error(ret.msg);
+										}
+									},{
+										version : ret.data.version
+									});
+									
+									layer.close(index);
+							  }
+							  ,btn2: function(){
+							    layer.closeAll();
+							  }
+									
+						});
+					});
+										
+				} else {
+					//$btn.text('未现新版本');
+				}
+			}
+		});
+	});
+}
+
+function versionDetail(){
+	
+}
+
+// 禁用/启用
+function updateStatus(){
+	$("input[name='enabled']").change(function() { 
+		var checked = $(this).is(':checked');
+		var id = $(this).val();
+		$.eovaPost('/eova/store/enabled/'+ id, function(ret){
+			if (ret.state == 'ok') {
+				$.msg('应用状态变更, 待重启服务后生效');
+			} else {
+				$.error(ret.msg);
+			}
+		}, 
+		{
+			status : checked ? 1 : 0
+		});
+	});
+}
+
+function add(){
+	dialog(function(){
+		location.reload();
+	}, '添加扩展应用', '' , 700, 500);
+}
+
+function uninstall(url){
+	layer.confirm('卸载可能会删除应用相关数据表和相关文件且无法恢复, 确认卸载？', {
+		title : '确定卸载',
+		icon : 3,
+		btn : [ '确定', '取消' ]
+	}, function(index) {
+		
+		layer.msg("正在卸载", {icon: 16 ,shade: 0.01, time: 20*1000});
+		
+		$.eovaPost(url, function(ret){
+			
+			layer.closeAll('loading');
+			
+			if (ret.state == 'ok') {
+				$.msg('卸载成功, 待重启服务!');
+				location.reload();
+			} else {
+				$.error(ret.msg);
+			}
+		});
+		layer.close(index);
+	});
+}
+
+
+function upgrade(url){
+	layer.confirm('重新安装当前版本, 确认重新安装？', {
+		title : '确定',
+		icon : 3,
+		btn : [ '确定', '取消' ]
+	}, function(index) {
+		
+		layer.msg("正在重新安装", {icon: 16 ,shade: 0.01, time: 20*1000});
+		
+		$.eovaPost(url, function(ret){
+
+			layer.closeAll('loading');
+			
+			if (ret.state == 'ok') {
+				$.msg('重新安装成功!');
+			} else {
+				$.error(ret.msg);
+			}
+		});
+		layer.close(index);
+	});
+}
+
+</script>
+<%}%>

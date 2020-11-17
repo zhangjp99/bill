@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="format-detection" content="telephone=yes" />
+<link href="https://cdn.bootcdn.net/ajax/libs/weui/2.3.0/style/weui.min.css" rel="stylesheet">
+<style type="text/css">
+* {
+	touch-action: pan-y;
+}
+
+.footer {
+	font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+	color: var(- -weui-FG-0);
+	margin: 0;
+	padding: 0;
+	padding-top: 40px;
+	padding-bottom: calc(10px + env(safe-area-inset-bottom));
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.footer img {
+	height: 20px;
+}
+.page__title{
+	text-align: center;
+}
+</style>
+</head>
+<body ontouchstart>
+	<div class="page grid js_show">
+		<div class="page__hd">
+			<h1 class="page__title">移动端管理系统</h1>
+<!-- 			<p class="page__desc">最简单的H5实现</p> -->
+		</div>
+		<div class="weui-grids">
+			#for(x : list)
+			<a href="/h5/list/#(x.config.objectCode)" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="/mobile/img/#(for.count).png" alt="">
+				</div>
+				<p class="weui-grid__label">#(x.name)</p>
+			</a>
+			#end
+		</div>
+		<br>
+		<div class="weui-grids">
+			#for(x : list)
+			<a href="/h5/list/#(x.config.objectCode)" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="/mobile/img/#(for.count).png" alt="">
+				</div>
+				<p class="weui-grid__label">#(x.name)</p>
+			</a>
+			#end
+			<a href="/doExit" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="/mobile/img/exit.png" alt="">
+				</div>
+				<p class="weui-grid__label">退出登录</p>
+			</a>
+		</div>
+
+		<div class="footer">
+			<a href="javascript:home()">
+				<img src="/mobile/img/footer.png">
+			</a>
+		</div>
+	</div>
+
+	<script>
+		
+	</script>
+
+	<script src="/lib/weuix/zepto.min.js"></script>
+	<script src="/lib/weuix/zepto.weui.min.js"></script>
+	<script src="/lib/weuix/util.js"></script>
+	<script src="/lib/weui/weui.min.js"></script>
+
+	<script language="javascript">
+		//防止页面后退
+		history.pushState(null, null, document.URL);
+		window.addEventListener('popstate', function() {
+			history.pushState(null, null, document.URL);
+		});
+	</script>
+</body>
+</html>
