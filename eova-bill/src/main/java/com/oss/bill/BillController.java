@@ -2,8 +2,10 @@ package com.oss.bill;
 
 import java.io.BufferedReader;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.alibaba.druid.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
@@ -63,8 +65,14 @@ public class BillController extends IndexController  {
 	        	result.put("code", "0000");
 	        	result.put("desc", "成功");
 	        	result.put("BorrowerInfo", borrowerInfo);
-	        	result.put("PaperReading", paReading);
-	        	result.put("DigitalReading", dReading);
+//	        	result.put("PaperReading", paReading);
+//	        	result.put("DigitalReading", dReading);
+	        	if(paReading!=null) {
+	        		result.put("PaperReading", paReading);
+	        	}
+	        	if(dReading!=null) {
+	        		result.put("DigitalReading", dReading);
+	        	}
 	        	renderJson(result);
 	        	return;
 	        }
@@ -214,7 +222,9 @@ public class BillController extends IndexController  {
 			paper.setMagCnt(obj[18]!=null ? Integer.parseInt(obj[18].toString()):0);
 			paper.setReadchar(obj[19]!=null ? Integer.parseInt(obj[19].toString()):0);
 			paper.setReadcar(obj[20]!=null ? Integer.parseInt(obj[20].toString()):0);
+			JsonUtils.getLibraryMap();
 			paper.setLoc(conversion(obj[21]));
+			paper.setEname(conversion2(obj[21]));
 			paper.setRecomLoc(conversion(obj[22]));
 			paper.setClc1(obj[23]!=null ? map.get(obj[23].toString()):"");
 			paper.setClc2(obj[24]!=null ? map.get(obj[24].toString()):"");
@@ -272,12 +282,42 @@ public class BillController extends IndexController  {
 	 */
 	public String conversion(Object obj) {
 		String loc ="";
+		Set<String> outputs = new HashSet<String>();
 		if(obj!=null && !"".equals(obj.toString())) {
 			String[] locArr = obj.toString().split(";");
 			for (int i = 0; i < locArr.length; i++) {
 				if(!StringUtils.isEmpty(locArr[i])) {
-					loc+=JsonUtils.findName(locArr[i].trim())+";";
+					outputs.add(JsonUtils.findName(locArr[i].trim()));
 				}
+			}
+		}
+		if(outputs.size()>0) {
+			for (String str : outputs) {
+				loc+=str+";";
+			}
+		}
+		return loc;
+	}
+	
+	/**
+	 * 转换图书馆英文名称
+	 * @param obj
+	 * @return
+	 */
+	public String conversion2(Object obj) {
+		String loc ="";
+		Set<String> outputs = new HashSet<String>();
+		if(obj!=null && !"".equals(obj.toString())) {
+			String[] locArr = obj.toString().split(";");
+			for (int i = 0; i < locArr.length; i++) {
+				if(!StringUtils.isEmpty(locArr[i])) {
+					outputs.add(JsonUtils.findEName(locArr[i].trim()));
+				}
+			}
+		}
+		if(outputs.size()>0) {
+			for (String str : outputs) {
+				loc+=str+";";
 			}
 		}
 		return loc;

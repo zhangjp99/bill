@@ -90,6 +90,10 @@ public class PaperReading {
 	 */
 	private String loc;
 	/**
+	 * 到馆英文名称，分号分隔
+	 */
+	private String ename;
+	/**
 	 * 附近馆馆代码，分号分隔
 	 */
 	private String recomLoc;
@@ -260,6 +264,12 @@ public class PaperReading {
 	}
 	public void setClc3(String clc3) {
 		this.clc3 = clc3;
+	}
+	public String getEname() {
+		return ename;
+	}
+	public void setEname(String ename) {
+		this.ename = ename;
 	}
 	
 

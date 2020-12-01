@@ -1856,7 +1856,7 @@ public class DateUtils {
 //		System.out.println(addDay(strToDate("19700101"), 18563));
 //		 System.out.println(getDate());
 //		 System.out.println(addDate("19700101", 18535));
-//		 System.out.println(addMinute(addDate("19700101", 18570), 569));
+		 System.out.println(addMinute(addDate("19700101", 18570), 1022));
 //		 System.out.println(getDateMinute(new Date())-6);
 //		 System.out.println(new Date());
 		 String str = "2020-11-09 15:54:00";

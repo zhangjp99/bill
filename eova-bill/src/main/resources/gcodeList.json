@@ -163,7 +163,7 @@
                     "oqx": "浦东新区",
                     "level": "区（县）",
                     "name": "浦东图书馆",
-                    "ename": "Pu Dong Library ",
+                    "ename": "Pu Dong Library",
                     "tss": []
                 },
                 {
@@ -235,7 +235,7 @@
                     "oqx": "浦东新区",
                     "level": "基层服务点",
                     "name": "周浦镇图书馆",
-                    "ename": "Zhou Pu Town Service Point ",
+                    "ename": "Zhou Pu Town Service Point",
                     "tss": []
                 },
                 {
@@ -243,7 +243,7 @@
                     "oqx": "浦东新区",
                     "level": "基层服务点",
                     "name": "康桥镇图书馆",
-                    "ename": "Kang Qiao Town Service Point ",
+                    "ename": "Kang Qiao Town Service Point",
                     "tss": []
                 },
                 {
@@ -515,7 +515,7 @@
                     "oqx": "杨浦区",
                     "level": "基层服务点",
                     "name": "五角场街道图书馆",
-                    "ename": "Wu Jiao Chang Neighborhood Service Point ",
+                    "ename": "Wu Jiao Chang Neighborhood Service Point",
                     "tss": []
                 },
                 {
@@ -563,7 +563,7 @@
                     "oqx": "杨浦区",
                     "level": "基层服务点",
                     "name": "控江路街道图书馆",
-                    "ename": "Kong Jiang Road Neighborhood Service Point ",
+                    "ename": "Kong Jiang Road Neighborhood Service Point",
                     "tss": []
                 },
                 {
@@ -579,7 +579,7 @@
                     "oqx": "杨浦区",
                     "level": "基层服务点",
                     "name": "长白新村街道图书馆",
-                    "ename": "Chang Bai New Village Neighborhood Service Point ",
+                    "ename": "Chang Bai New Village Neighborhood Service Point",
                     "tss": []
                 },
                 {
@@ -611,7 +611,7 @@
                     "oqx": "嘉定区",
                     "level": "区（县）",
                     "name": "嘉定区图书馆",
-                    "ename": "Jia Ding District Library ",
+                    "ename": "Jia Ding District Library",
                     "tss": []
                 },
                 {
@@ -891,7 +891,7 @@
                     "oqx": "虹口区",
                     "level": "基层服务点",
                     "name": "提篮桥街道图书馆",
-                    "ename": "Ti Lan Qiao Neighborhood Service Point ",
+                    "ename": "Ti Lan Qiao Neighborhood Service Point",
                     "tss": []
                 },
                 {
@@ -939,7 +939,7 @@
                     "oqx": "徐汇区",
                     "level": "基层服务点",
                     "name": "凌云街道图书馆",
-                    "ename": "Ling Yun Neighborhood Service Point ",
+                    "ename": "Ling Yun Neighborhood Service Point",
                     "tss": []
                 },
                 {
@@ -995,7 +995,7 @@
                     "oqx": "徐汇区",
                     "level": "基层服务点",
                     "name": "枫林路街道图书馆",
-                    "ename": "Feng Lin Road Neighborhood Service Point ",
+                    "ename": "Feng Lin Road Neighborhood Service Point",
                     "tss": []
                 },
                 {
@@ -1275,7 +1275,7 @@
                     "oqx": "长宁区",
                     "level": "区（县）",
                     "name": "长宁区图书馆",
-                    "ename": "Chang Ning District Library ",
+                    "ename": "Chang Ning District Library",
                     "tss": []
                 },
                 {
@@ -1307,7 +1307,7 @@
                     "oqx": "长宁区",
                     "level": "基层服务点",
                     "name": "江苏路街道图书馆",
-                    "ename": "Jiang Su Road Neighborhood Service Point ",
+                    "ename": "Jiang Su Road Neighborhood Service Point",
                     "tss": []
                 },
                 {
@@ -1467,7 +1467,7 @@
                     "oqx": "青浦区",
                     "level": "基层服务点",
                     "name": "重固镇图书馆",
-                    "ename": "Zhong Gu Town Service Point ",
+                    "ename": "Zhong Gu Town Service Point",
                     "tss": []
                 },
                 {
@@ -1659,7 +1659,7 @@
                     "oqx": "静安区",
                     "level": "区（县）",
                     "name": "静安区图书馆",
-                    "ename": "Jing'an District Library ",
+                    "ename": "Jing'an District Library",
                     "tss": []
                 },
                 {
@@ -1963,7 +1963,7 @@
                     "oqx": "崇明县",
                     "level": "基层服务点",
                     "name": "长兴乡图书馆",
-                    "ename": "Chang Xing Town Service Point ",
+                    "ename": "Chang Xing Town Service Point",
                     "tss": []
                 },
                 {
@@ -1971,7 +1971,7 @@
                     "oqx": "崇明县",
                     "level": "基层服务点",
                     "name": "横沙乡图书馆",
-                    "ename": "Heng Sha Town Service Point ",
+                    "ename": "Heng Sha Town Service Point",
                     "tss": []
                 }
             ]
@@ -2067,7 +2067,7 @@
                     "oqx": "金山区",
                     "level": "基层服务点",
                     "name": "金山卫镇图书馆",
-                    "ename": "Jin Shan Wei Town Service Point ",
+                    "ename": "Jin Shan Wei Town Service Point",
                     "tss": []
                 },
                 {
