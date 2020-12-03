@@ -15,6 +15,7 @@ import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Db;
 import com.oss.beans.Tokens;
 import com.oss.model.BorrowerRequest;
+import com.oss.model.ClcInfo;
 import com.oss.model.DigitalReading;
 import com.oss.model.PaperReading;
 import com.oss.model.UserLogin;
@@ -57,7 +58,7 @@ public class BillController extends IndexController  {
 	      //电子阅读信息
 	        DigitalReading dReading = new DigitalReading();
 	        if(borrowerInfo!=null) {
-	        	Map<String, String> tMap =  getCategory();
+	        	Map<String, ClcInfo> tMap =  getCategory();
 	        	//如果类型是少儿，获取少儿阅读信息表，否则检查成人阅读表
 	        	paReading =  getPaperInfo(request.getBorrowerId(), tMap);
 	        	dReading = getDigitalInfo(request.getBorrowerId());
@@ -136,14 +137,20 @@ public class BillController extends IndexController  {
 	 * 获取分类信息
 	 * @return
 	 */
-	public Map<String, String> getCategory(){
-		Map<String, String> map = new HashMap<String, String>();
-		List<?> list = Db.use("bill").query("select clc,clcname from reading_account_2019_clc");
+	public Map<String, ClcInfo> getCategory(){
+		Map<String, ClcInfo> map = new HashMap<String, ClcInfo>();
+		List<?> list = Db.use("bill").query("select clc,clcname,book1,book2,book3 from reading_account_2019_clc");
 		if(list!=null &&list.size()>0) {
 			for (int i = 0; i < list.size(); i++) {
 				Object[] obj =  (Object[]) list.get(i);
-				if(obj[0]!=null && obj[1]!=null) {
-					map.put(obj[0].toString(),obj[1].toString());
+				ClcInfo clc = new ClcInfo();
+				if(obj[0]!=null ) {
+					clc.setClc(obj[0].toString());
+					clc.setClcname(obj[1]!=null ? obj[1].toString() : "");
+					clc.setBook1(obj[2]!=null ? obj[2].toString() : "");
+					clc.setBook2(obj[3]!=null ? obj[3].toString() : "");
+					clc.setBook3(obj[4]!=null ? obj[4].toString() : "");
+					map.put(obj[0].toString(),clc);
 				}
 			}
 		}
@@ -194,7 +201,7 @@ public class BillController extends IndexController  {
 	 * 获取纸质阅读信息--成人
 	 * @return
 	 */
-	public PaperReading getPaperInfo(String borrowerId,Map<String, String> map){
+	public PaperReading getPaperInfo(String borrowerId,Map<String, ClcInfo> map){
 		 List<?> list = Db.use("bill").query("select ShLibBorrower,cnt,location_cnt,month1,month2,month3,month4,month5,"
 		 		+ "month6,month7,month8,month9,month10,month11,month12,per,tag,book_cnt,mag_cnt,readchar,readcar,loc,"
 		 		+ "recom_loc,clc1,clc2,clc3 from reading_account_2019_adult  where ShLibBorrower=?",borrowerId);
@@ -226,12 +233,31 @@ public class BillController extends IndexController  {
 			paper.setLoc(conversion(obj[21]));
 			paper.setEname(conversion2(obj[21]));
 			paper.setRecomLoc(conversion(obj[22]));
-			paper.setClc1(obj[23]!=null ? map.get(obj[23].toString()):"");
-			paper.setClc2(obj[24]!=null ? map.get(obj[24].toString()):"");
-			paper.setClc3(obj[25]!=null ? map.get(obj[25].toString()):"");
+			paper.setClc1(obj[23]!=null ? map.get(obj[23].toString()).getClcname():"");
+			paper.setClc2(obj[24]!=null ? map.get(obj[24].toString()).getClcname():"");
+			paper.setClc3(obj[25]!=null ? map.get(obj[25].toString()).getClcname():"");
+			paper.setClcBook1(obj[23]!=null ?map.get(obj[23].toString()).getBook1():"");
+			paper.setClcBook2(obj[24]!=null ? map.get(obj[24].toString()).getBook1():"");
+			paper.setClcBook3(obj[25]!=null ? map.get(obj[25].toString()).getBook1():"");
 			return paper;
 		}
 		return null;
+	}
+	
+	/**
+	 * book转换
+	 * @param clcInfo
+	 * @return
+	 */
+	public String clctToString(ClcInfo clcInfo) {
+		String book=clcInfo.getBook1();
+		if(!StringUtils.isEmpty(clcInfo.getBook2())) {
+			book += clcInfo.getBook2()+";";
+		}
+		if(!StringUtils.isEmpty(clcInfo.getBook3())) {
+			book += clcInfo.getBook3()+";";
+		}
+		return book;
 	}
 	
 	/**

@@ -109,6 +109,19 @@ public class PaperReading {
 	 * 读书分类号3
 	 */
 	private String clc3;
+	
+	/**
+	 * 推荐图书1
+	 */
+	private String clcBook1;
+	/**
+	 * 推荐图书2
+	 */
+	private String clcBook2;
+	/**
+	 * 推荐图书3
+	 */
+	private String clcBook3;
 	public String getBorrowerId() {
 		return borrowerId;
 	}
@@ -270,6 +283,24 @@ public class PaperReading {
 	}
 	public void setEname(String ename) {
 		this.ename = ename;
+	}
+	public String getClcBook1() {
+		return clcBook1;
+	}
+	public void setClcBook1(String clcBook1) {
+		this.clcBook1 = clcBook1;
+	}
+	public String getClcBook2() {
+		return clcBook2;
+	}
+	public void setClcBook2(String clcBook2) {
+		this.clcBook2 = clcBook2;
+	}
+	public String getClcBook3() {
+		return clcBook3;
+	}
+	public void setClcBook3(String clcBook3) {
+		this.clcBook3 = clcBook3;
 	}
 	
 
