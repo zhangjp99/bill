@@ -106,6 +106,7 @@ public class HttpClient {
 			testManager.setCardno(name);
 			testManager.setPasswd(pwd);
 			Tokens tokens = testManager.getTokens(devs,servers);
+			testManager.doAPIS(servers);
 			return tokens;
 		} catch (Exception e) {
 			log.info("登录失败",e);

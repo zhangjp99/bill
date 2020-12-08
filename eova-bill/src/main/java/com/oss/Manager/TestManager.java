@@ -98,9 +98,9 @@ public class TestManager {
         int code = result.code();
         String res = result.body();
         if (code == 200) {
-//			System.out.println(res);
+			System.out.println(res);
         } else {
-//			System.out.println("errcode:" + code);
+			System.out.println("errcode:" + code);
         }
         return res;
     }

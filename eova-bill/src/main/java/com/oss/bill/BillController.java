@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alibaba.druid.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.eova.core.IndexController;
@@ -19,10 +22,13 @@ import com.oss.model.ClcInfo;
 import com.oss.model.DigitalReading;
 import com.oss.model.PaperReading;
 import com.oss.model.UserLogin;
+import com.oss.utils.DateUtils;
 import com.oss.utils.HttpClient;
 import com.oss.utils.JsonUtils;
 
 public class BillController extends IndexController  {
+	
+	private static final Logger logger = LoggerFactory.getLogger(BillController.class);
 	
 	public static final String CHILD = "少儿";
 	public static final String ADULT = "成人";
@@ -110,14 +116,20 @@ public class BillController extends IndexController  {
 	        //调用fastjson解析出对象
 	        System.out.println(json.toString());
 	        UserLogin request = JSONObject.parseObject(json.toString(), UserLogin.class);
-	        Tokens tokens = HttpClient.login(request.getName(), request.getPwd());
-	        if(tokens != null && !StringUtils.isEmpty(tokens.getShlibBorrower())) {
-	        	result.put("code", "0000");
-	        	result.put("desc", "登录成功");
-	        	result.put("borrowerId", tokens.getShlibBorrower());
-	        	renderJson(result);
-	        	return;
-	        }
+	        try {
+	        	Tokens tokens = HttpClient.login(request.getName(), request.getPwd());
+	        	System.out.println("登录接口,时间"+DateUtils.getCurrentFromtDate());
+	        	System.out.println("登录接口，tokens={},Borrower={}"+tokens.getUat()+"---"+tokens.getShlibBorrower());
+	        	if(tokens != null && !StringUtils.isEmpty(tokens.getShlibBorrower())) {
+	        		result.put("code", "0000");
+	        		result.put("desc", "登录成功");
+	        		result.put("borrowerId", tokens.getShlibBorrower());
+	        		renderJson(result);
+	        		return;
+	        	}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 	        result.put("code", "1001");
 	        result.put("desc", "登录失败，用户名或密码不正确");
 	    	renderJson(result);
