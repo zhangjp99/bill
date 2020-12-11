@@ -18,6 +18,7 @@ import com.oss.beans.Tokens;
 import com.oss.beans.reqparm;
 import com.oss.utils.APIConst;
 import com.oss.utils.DateUtility;
+import com.oss.utils.DateUtils;
 import com.oss.utils.SHA;
 
 
@@ -106,7 +107,7 @@ public class TestManager {
     }
 
     private String doSecret(String appid, String appsecret) {
-        return SHA.sha256(appid + DateUtility.getDateHours() + appsecret);
+        return SHA.sha256(appid + DateUtility.getDateHours2() + appsecret);
     }
 
     private reqparm Token_TokenAcquire_aat_01(Devs devs,Servers servers) {

@@ -15,7 +15,8 @@ public class ServerManager {
 		case ws01:
 			return setServers("", 443, "ws01.library.sh.cn", Protocols.https);
 		case ws0a:
-			return setServers("", 443, "ws0a.library.sh.cn", Protocols.https);
+			//return setServers("", 443, "ws0a.library.sh.cn", Protocols.https);
+			return setServers("", 443, "10.1.21.194", Protocols.https);
 		case ws11:
 			return setServers("", 443, "ws11.library.sh.cn", Protocols.https);
 		default:

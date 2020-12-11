@@ -8,13 +8,24 @@
  */
 package com.eova.config;
 
+import java.net.URLClassLoader;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.beetl.core.GroupTemplate;
+
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.eova.aop.MetaObjectIntercept;
 import com.eova.aop.UploadIntercept;
 import com.eova.aop.UserSessionIntercept;
 import com.eova.aop.eova.EovaIntercept;
-import com.eova.common.utils.web.RequestUtil;
 import com.eova.common.utils.xx;
+import com.eova.common.utils.web.RequestUtil;
 import com.eova.copyright.CopyrightController;
 import com.eova.copyright.EovaAuth;
 import com.eova.core.IndexController;
@@ -35,7 +46,17 @@ import com.eova.interceptor.LoginInterceptor;
 import com.eova.mod.EovaModConfig;
 import com.eova.mod.EovaModPlugin;
 import com.eova.mod.EovaModUtil;
-import com.eova.model.*;
+import com.eova.model.Button;
+import com.eova.model.Menu;
+import com.eova.model.MetaField;
+import com.eova.model.MetaObject;
+import com.eova.model.Mod;
+import com.eova.model.Role;
+import com.eova.model.RoleBtn;
+import com.eova.model.Session;
+import com.eova.model.Task;
+import com.eova.model.User;
+import com.eova.model.Widget;
 import com.eova.plugin.config.EovaConfigPlugin;
 import com.eova.plugin.quartz.QuartzPlugin;
 import com.eova.service.LoginService;
@@ -56,7 +77,12 @@ import com.eova.widget.grid.GridController;
 import com.eova.widget.tree.TreeController;
 import com.eova.widget.treegrid.TreeGridController;
 import com.eova.widget.upload.UploadController;
-import com.jfinal.config.*;
+import com.jfinal.config.Constants;
+import com.jfinal.config.Handlers;
+import com.jfinal.config.Interceptors;
+import com.jfinal.config.JFinalConfig;
+import com.jfinal.config.Plugins;
+import com.jfinal.config.Routes;
 import com.jfinal.config.Routes.Route;
 import com.jfinal.json.MixedJsonFactory;
 import com.jfinal.kit.LogKit;
@@ -65,11 +91,7 @@ import com.jfinal.plugin.druid.DruidStatViewHandler;
 import com.jfinal.plugin.druid.IDruidStatViewAuth;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.jfinal.template.Engine;
-import org.beetl.core.GroupTemplate;
-
-import javax.servlet.http.HttpServletRequest;
-import java.net.URLClassLoader;
-import java.util.*;
+import com.oss.Interceptor.KuayuInterceptor;
 
 public class EovaConfig extends JFinalConfig {
 
@@ -363,6 +385,8 @@ public class EovaConfig extends JFinalConfig {
 		me.addGlobalActionInterceptor(new LoginInterceptor());
 		// 权限验证拦截
 		me.addGlobalActionInterceptor(new AuthInterceptor());
+		//跨域拦截器
+		me.addGlobalActionInterceptor(new KuayuInterceptor());
 	}
 
 	/**配置Eova业务**/

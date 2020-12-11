@@ -17,6 +17,7 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.server.undertow.UndertowServer;
+import com.oss.Interceptor.KuayuInterceptor;
 import com.oss.bill.BillController;
 import com.oss.hotel.HotelController;
 import com.oss.model.Address;
@@ -122,7 +123,7 @@ public class AppConfig extends EovaConfig {
 		 * 自定义Eova全局拦截器
 		 * 全局的查询拦截,可快速集中解决系统的查询数据权限,严谨,高效!
 		 */
-		// setEovaIntercept(new GlobalEovaIntercept());
+		// setEovaIntercept(new KuayuInterceptor());
 		/*
 		 * 默认元对象业务拦截器:未配置元对象业务拦截器会默认命中此拦截器
 		 * 自定义元对象拦截器时自行考虑是否需要继承默认拦截器
@@ -132,7 +133,7 @@ public class AppConfig extends EovaConfig {
 		 * 用户会话拦截器
 		 */
 		setUserSessionIntercept(new MyUserSessionIntercept());
-		// setUploadIntercept(new MyUploadIntercept());
+//		 setUploadIntercept(new MyUploadIntercept());
 	}
 
 }

@@ -25,6 +25,18 @@ public class DateUtility {
 		}
 		return dateStr;
 	}
+	
+	public static synchronized String getDateHours2() {
+		String str="";
+			try {
+				SimpleDateFormat dft = new SimpleDateFormat("yyyyMMddHH");
+				Calendar date = Calendar.getInstance();
+				str = dft.format(date.getTime());
+			} catch (Exception e) {
+				str = "";
+			}
+		return str;
+	}
 
 	public static synchronized String getDateHours(String datetimes) {
 		Date date;

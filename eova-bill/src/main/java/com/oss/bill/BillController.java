@@ -117,7 +117,8 @@ public class BillController extends IndexController  {
 	        System.out.println(json.toString());
 	        UserLogin request = JSONObject.parseObject(json.toString(), UserLogin.class);
 	        try {
-	        	Tokens tokens = HttpClient.login(request.getName(), request.getPwd());
+	        	HttpClient http = new HttpClient();
+	        	Tokens tokens = http.login(request.getName(), request.getPwd());
 	        	System.out.println("登录接口,时间"+DateUtils.getCurrentFromtDate());
 	        	System.out.println("登录接口，tokens={},Borrower={}"+tokens.getUat()+"---"+tokens.getShlibBorrower());
 	        	if(tokens != null && !StringUtils.isEmpty(tokens.getShlibBorrower())) {

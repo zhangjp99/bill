@@ -19,6 +19,7 @@ import com.alibaba.druid.wall.WallFilter;
 import com.eova.common.utils.xx;
 import com.eova.common.utils.io.ClassUtil;
 import com.eova.core.type.MysqlConvertor;
+import com.eova.core.type.SqlServerConvertor;
 import com.eova.ext.jfinal.EovaDbPro;
 import com.eova.ext.jfinal.EovaOracleDialect;
 import com.eova.sql.ddl.DefineDialectFactory;
@@ -235,7 +236,7 @@ public class EovaDataSource {
 				EovaConfig.convertor = ClassUtil.newClass("com.eova.mod.eova.postgresql.PostgreSqlConvertor");
 				break;
 			case JdbcUtils.SQL_SERVER:
-				EovaConfig.convertor = ClassUtil.newClass("com.eova.mod.eova.sqlserver.SqlServerConvertor");
+				EovaConfig.convertor = new SqlServerConvertor();
 				break;
 			}
 		} catch (Exception e) {

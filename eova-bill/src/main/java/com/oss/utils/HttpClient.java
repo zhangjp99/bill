@@ -94,7 +94,7 @@ public class HttpClient {
 	 * @param pwd
 	 * @return
 	 */
-	public static Tokens login(String name,String pwd) {
+	public  Tokens login(String name,String pwd) {
 		try {
 			/*1. 获取一个Server 服务器参数对象*/
 			Servers servers=new ServerManager().getServer(ServerGroups.ws0a);
@@ -140,7 +140,8 @@ public class HttpClient {
 //		testManager.doAPIS(servers);
 //		/*5. 执行调用并根据配置输出*/
 //		DebugManager.getAll(devs);
-		Tokens tokens = login("jyang", "jyang1");
+		HttpClient http = new HttpClient();
+		Tokens tokens = http.login("jyang", "jyang1");
 		System.out.println(tokens.getShlibBorrower());
 
 	}
