@@ -20,6 +20,7 @@ import com.oss.beans.Tokens;
 import com.oss.model.BorrowerRequest;
 import com.oss.model.ClcInfo;
 import com.oss.model.DigitalReading;
+import com.oss.model.Location;
 import com.oss.model.PaperReading;
 import com.oss.model.UserLogin;
 import com.oss.utils.DateUtils;
@@ -65,8 +66,11 @@ public class BillController extends IndexController  {
 	        DigitalReading dReading = new DigitalReading();
 	        if(borrowerInfo!=null) {
 	        	Map<String, ClcInfo> tMap =  getCategory();
+		        Map<String, String> bookMap = getBooknames(request.getBorrowerId());
+		        Map<String, Location> locMap = getLocation();
+//	        	Map<String, String> bookMap = new HashMap<String, String>();
 	        	//如果类型是少儿，获取少儿阅读信息表，否则检查成人阅读表
-	        	paReading =  getPaperInfo(request.getBorrowerId(), tMap);
+	        	paReading =  getPaperInfo(request.getBorrowerId(), tMap,bookMap,locMap);
 	        	dReading = getDigitalInfo(request.getBorrowerId());
 	        	//返回
 	        	result.put("code", "0000");
@@ -169,6 +173,50 @@ public class BillController extends IndexController  {
 		}
 		return map;
 	}
+	/**
+	 * 获取借阅过的3本书
+	 * @param borrowerId
+	 * @return
+	 */
+	public Map<String, String> getBooknames(String borrowerId){
+		Map<String, String> map = new HashMap<String, String>();
+		List<?> list = Db.use("bill").query("select bookname from reading_account_2019_borrower_booknames where ShLibBorrower=? order by ckodate desc",borrowerId);
+		if(list!=null &&list.size()>0) {
+			for (int i = 0; i < list.size(); i++) {
+				if( i == 0) {
+					map.put("book1", list.get(i).toString());
+				}else if( i == 1) {
+					map.put("book2", list.get(i).toString());
+				}else if( i == 2) {
+					map.put("book3", list.get(i).toString());
+				}
+			}
+		}
+		return map;
+	}
+	
+	/**
+	 * 获取图书馆信息
+	 * @param borrowerId
+	 * @return
+	 */
+	public Map<String, Location> getLocation(){
+		Map<String, Location> map = new HashMap<String, Location>();
+		List<?> list = Db.use("bill").query("select location,lname,qx from reading_account_2019_loc");
+		if(list!=null &&list.size()>0) {
+			for (int i = 0; i < list.size(); i++) {
+				Location loc = new Location();
+				Object[] obj =  (Object[]) list.get(i);
+				loc.setLocation(obj[0]!=null ? obj[0].toString():"");
+				loc.setLname(obj[1]!=null ? obj[1].toString():"");
+				loc.setQx(obj[2]!=null ? obj[2].toString():"");
+				if(obj[0]!=null) {
+					map.put(obj[0].toString(), loc);
+				}
+			}
+		}
+		return map;
+	}
 	
 	/**
 	 * 获取用户信息
@@ -214,7 +262,7 @@ public class BillController extends IndexController  {
 	 * 获取纸质阅读信息--成人
 	 * @return
 	 */
-	public PaperReading getPaperInfo(String borrowerId,Map<String, ClcInfo> map){
+	public PaperReading getPaperInfo(String borrowerId,Map<String, ClcInfo> map,Map<String, String> bookmap, Map<String, Location>locMap){
 		 List<?> list = Db.use("bill").query("select ShLibBorrower,cnt,location_cnt,month1,month2,month3,month4,month5,"
 		 		+ "month6,month7,month8,month9,month10,month11,month12,per,tag,book_cnt,mag_cnt,readchar,readcar,loc,"
 		 		+ "recom_loc,clc1,clc2,clc3 from reading_account_2019_adult  where ShLibBorrower=?",borrowerId);
@@ -243,15 +291,15 @@ public class BillController extends IndexController  {
 			paper.setReadchar(obj[19]!=null ? Integer.parseInt(obj[19].toString()):0);
 			paper.setReadcar(obj[20]!=null ? Integer.parseInt(obj[20].toString()):0);
 			JsonUtils.getLibraryMap();
-			paper.setLoc(conversion(obj[21]));
-			paper.setEname(conversion2(obj[21]));
-			paper.setRecomLoc(conversion(obj[22]));
+			paper.setLoc(conversion(obj[21],locMap));
+			paper.setEname(obj[21]!=null ? obj[21].toString():"");
+			paper.setRecomLoc(conversion2(obj[22], locMap));
 			paper.setClc1(obj[23]!=null ? map.get(obj[23].toString()).getClcname():"");
 			paper.setClc2(obj[24]!=null ? map.get(obj[24].toString()).getClcname():"");
 			paper.setClc3(obj[25]!=null ? map.get(obj[25].toString()).getClcname():"");
-			paper.setClcBook1(obj[23]!=null ?map.get(obj[23].toString()).getBook1():"");
-			paper.setClcBook2(obj[24]!=null ? map.get(obj[24].toString()).getBook1():"");
-			paper.setClcBook3(obj[25]!=null ? map.get(obj[25].toString()).getBook1():"");
+			paper.setClcBook1(bookmap.get("book1")!=null ? bookmap.get("book1"):"");
+			paper.setClcBook2(bookmap.get("book2")!=null ? bookmap.get("book2"):"");
+			paper.setClcBook3(bookmap.get("book3")!=null ? bookmap.get("book3"):"");
 			return paper;
 		}
 		return null;
@@ -315,42 +363,44 @@ public class BillController extends IndexController  {
 	 * map.get(obj[24].toString()):""); return paper; } return null; }
 	 */
 	/**
-	 * 转换图书馆名称
+	 * 转换到馆QX
 	 * @param obj
 	 * @return
 	 */
-	public String conversion(Object obj) {
-		String loc ="";
+	public String conversion(Object loc,Map<String, Location>locMap) {
+		String qx ="";
 		Set<String> outputs = new HashSet<String>();
-		if(obj!=null && !"".equals(obj.toString())) {
-			String[] locArr = obj.toString().split(";");
+		if(loc!=null && !"".equals(loc.toString())) {
+			String[] locArr = loc.toString().split(";");
 			for (int i = 0; i < locArr.length; i++) {
 				if(!StringUtils.isEmpty(locArr[i])) {
-					outputs.add(JsonUtils.findName(locArr[i].trim()));
+					outputs.add(locMap.get(locArr[i].trim()).getQx());
 				}
 			}
 		}
 		if(outputs.size()>0) {
 			for (String str : outputs) {
-				loc+=str+";";
+				qx+=str+";";
 			}
 		}
-		return loc;
+		return qx;
 	}
 	
 	/**
-	 * 转换图书馆英文名称
+	 * 转换图书馆名称
 	 * @param obj
 	 * @return
 	 */
-	public String conversion2(Object obj) {
+	public String conversion2(Object obj,Map<String, Location>locMap) {
 		String loc ="";
 		Set<String> outputs = new HashSet<String>();
 		if(obj!=null && !"".equals(obj.toString())) {
 			String[] locArr = obj.toString().split(";");
 			for (int i = 0; i < locArr.length; i++) {
 				if(!StringUtils.isEmpty(locArr[i])) {
-					outputs.add(JsonUtils.findEName(locArr[i].trim()));
+					if(locMap.get(locArr[i].trim())!=null) {
+						outputs.add(locMap.get(locArr[i].trim()).getLname());
+					}
 				}
 			}
 		}
