@@ -90,6 +90,10 @@ public class PaperReading {
 	 */
 	private String loc;
 	/**
+	 * 到馆名称，分号分隔
+	 */
+	private String locname;
+	/**
 	 * 到馆英文名称，分号分隔
 	 */
 	private String ename;
@@ -301,6 +305,12 @@ public class PaperReading {
 	}
 	public void setClcBook3(String clcBook3) {
 		this.clcBook3 = clcBook3;
+	}
+	public String getLocname() {
+		return locname;
+	}
+	public void setLocname(String locname) {
+		this.locname = locname;
 	}
 	
 

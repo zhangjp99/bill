@@ -292,7 +292,8 @@ public class BillController extends IndexController  {
 			paper.setReadcar(obj[20]!=null ? Integer.parseInt(obj[20].toString()):0);
 			JsonUtils.getLibraryMap();
 			paper.setLoc(conversion(obj[21],locMap));
-			paper.setEname(obj[21]!=null ? obj[21].toString():"");
+			paper.setEname(obj[21]!=null ? obj[21].toString().replaceAll(" ", ""):"");
+			paper.setLocname(conversion2(obj[21], locMap));
 			paper.setRecomLoc(conversion2(obj[22], locMap));
 			paper.setClc1(obj[23]!=null ? map.get(obj[23].toString()).getClcname():"");
 			paper.setClc2(obj[24]!=null ? map.get(obj[24].toString()).getClcname():"");
@@ -369,20 +370,21 @@ public class BillController extends IndexController  {
 	 */
 	public String conversion(Object loc,Map<String, Location>locMap) {
 		String qx ="";
-		Set<String> outputs = new HashSet<String>();
+//		Set<String> outputs = new HashSet<String>();
 		if(loc!=null && !"".equals(loc.toString())) {
 			String[] locArr = loc.toString().split(";");
 			for (int i = 0; i < locArr.length; i++) {
 				if(!StringUtils.isEmpty(locArr[i])) {
-					outputs.add(locMap.get(locArr[i].trim()).getQx());
+//					outputs.add(locMap.get(locArr[i].trim()).getQx());
+					qx+= locMap.get(locArr[i].trim()).getQx() +";";
 				}
 			}
 		}
-		if(outputs.size()>0) {
-			for (String str : outputs) {
-				qx+=str+";";
-			}
-		}
+//		if(outputs.size()>0) {
+//			for (String str : outputs) {
+//				qx+=str+";";
+//			}
+//		}
 		return qx;
 	}
 	
@@ -411,4 +413,5 @@ public class BillController extends IndexController  {
 		}
 		return loc;
 	}
+	
 }
